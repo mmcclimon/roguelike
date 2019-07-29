@@ -4,6 +4,9 @@ class Drawable():
         self._y = kwargs['y']
         self._glyph = kwargs['glyph']
 
+        self._last_x = self.x
+        self._last_y = self.y
+
     @property
     def x(self):
         return self._x
@@ -33,4 +36,8 @@ class Drawable():
         return self.y, self.x
 
     def draw(self, ctx):
+        self._last_y, self._last_x = self.coords()
         ctx.screen.addstr(*self.coords(), self.glyph)
+
+    def post_loop_hook(self, ctx):
+        pass

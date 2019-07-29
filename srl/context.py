@@ -6,23 +6,27 @@ class UserQuit(Exception):
 class Context:
     def __init__(self, screen):
         self.screen = screen
-        self.player = Player()
+        self.player = Player(trace=True)
+        self.drawables = set([ self.player ])
 
         self.screen.clear()
 
     def loop_once(self):
-        this_y, this_x = self.player.coords()   # temporary
+        for thing in self.drawables:
+            thing.draw(self)
 
-        self.player.draw(self)
+        self.handle_input()
 
-        k = self.screen.getkey()
-        self.handle_key(k)
+        # I'm not thrilled about this, but hey
+        for thing in self.drawables:
+            thing.post_loop_hook(self)
 
-        self.screen.addch(this_y, this_x, '.')  # temporary
 
 
     # eventually: some abstraction.
-    def handle_key(self, k):
+    def handle_input(self):
+        k = self.screen.getkey()
+
         if k == 'j':
             self.player.move_down()
         if k == 'k':
