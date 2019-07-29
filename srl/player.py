@@ -10,6 +10,10 @@ class Player(Drawable):
     def draw(self, ctx):
         super().draw(ctx)
 
+    # a player cannot collide with themselves
+    def handle_collisions(self, ctx):
+        pass
+
     def post_loop_hook(self, ctx):
         if not self.trace:
             return

@@ -7,3 +7,7 @@ class ContextDrawable(ABC):
 
     def post_loop_hook(self, ctx):
         pass
+
+    @abstractmethod
+    def handle_collisions(self, ctx):
+        pass

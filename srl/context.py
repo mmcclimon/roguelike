@@ -9,21 +9,23 @@ class UserQuit(Exception):
 class Context:
     def __init__(self, screen):
         self.screen = screen
-        self.player = Player(trace=True)
-        self.keymap = Keymap()
         self._is_running = True
-
-        self.drawables = set([ self.player ])
-        self.screen.clear()
 
         # draw our lil debugging window
         self.cmd_win = curses.newwin(1, curses.COLS, curses.LINES-1, 0)
         self.cmd_win.addstr(0, 0, '[debug]')
 
+        self.player = Player(trace=True)
+        self.keymap = Keymap()
+
+        # everything in self.drawables should be ContextDrawable
+        self.drawables = set([ self.player ])
+
         self.level = Level(n=1)
         self.level.generate(self)
         self.drawables.add(self.level)
 
+        self.screen.clear()
         self.refresh_all()
 
     def refresh_all(self):
@@ -38,6 +40,7 @@ class Context:
         self.relocate_cursor()
         self.screen.refresh()
         self.handle_input()
+        self.handle_collisions()
 
         # I'm not thrilled about this, but hey
         for thing in self.drawables:
@@ -49,6 +52,10 @@ class Context:
     def handle_input(self):
         k = self.screen.getkey()
         self.keymap.handle_key(self, k)
+
+    def handle_collisions(self):
+        for thing in self.drawables:
+            thing.handle_collisions(self)
 
     def debug(self, msg):
         self.cmd_win.clear()

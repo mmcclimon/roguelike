@@ -16,6 +16,10 @@ class Level(ContextDrawable):
         for thing in self.drawables:
             thing.draw(ctx)
 
+    def handle_collisions(self, ctx):
+        for thing in self.drawables:
+            thing.handle_collisions(ctx)
+
     def place_randomly(self, ctx, cls):
         y, x = random_coords(ctx)
         thing = cls(x=x, y=y)
