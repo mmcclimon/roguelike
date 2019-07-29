@@ -7,7 +7,7 @@ class SRL:
     def run(cls):
         try:
             curses.wrapper(cls.main)
-        except (KeyboardInterrupt, UserQuit):
+        except (KeyboardInterrupt):
             pass
 
         print('goodbye')
@@ -15,6 +15,5 @@ class SRL:
     def main(screen):
         ctx = Context(screen)
 
-        while ctx.is_running:
-            # Draw our at-sign
+        while ctx.is_running():
             ctx.loop_once()

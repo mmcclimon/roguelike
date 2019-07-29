@@ -22,14 +22,12 @@ class Context:
         self.screen.refresh()
         self.cmd_win.refresh()
 
-    @property
-    def is_running(self):
-        return self._is_running
-
     def loop_once(self):
+        # draw it.
         for thing in self.drawables:
             thing.draw(self)
 
+        self.screen.refresh()
         self.handle_input()
 
         # I'm not thrilled about this, but hey
@@ -46,4 +44,8 @@ class Context:
         self.cmd_win.addstr(0, 0, '[debug] ' + msg)
         self.cmd_win.refresh()
 
+    def is_running(self):
+        return self._is_running
 
+    def mark_done(self):
+        self._is_running = False
