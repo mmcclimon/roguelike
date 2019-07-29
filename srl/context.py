@@ -3,9 +3,6 @@ from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
 
-class UserQuit(Exception):
-    pass
-
 class Context:
     def __init__(self, screen):
         self.screen = screen
@@ -18,15 +15,18 @@ class Context:
         self.player = Player(trace=True)
         self.keymap = Keymap()
 
-        # everything in self.drawables should be ContextDrawable
-        self.drawables = set([ self.player ])
+        self.levels = []
+        self.level_idx = 0
 
-        self.level = Level(n=1)
-        self.level.generate(self)
-        self.drawables.add(self.level)
+        # generate the first level
+        self.create_level()
 
         self.screen.clear()
         self.refresh_all()
+
+    def create_level(self):
+        l = Level(self, self.level_idx)
+        self.levels.append(l)
 
     def refresh_all(self):
         self.screen.refresh()
@@ -68,5 +68,25 @@ class Context:
     def mark_done(self):
         self._is_running = False
 
-    def place_randomly(self, cls):
-        y, x = random_coords(ctx)
+    @property
+    def current_level(self):
+        return self.levels[ self.level_idx ]
+
+    @property
+    def drawables(self):
+        return [ self.current_level, self.player ]
+
+    def descend(self):
+        if self.current_level == self.levels[-1]:
+            self.create_level()
+
+        self.level_idx += 1
+        self.screen.clear()
+
+    def ascend(self):
+        self.level_idx -= 1
+        if self.level_idx < 0:
+            self.mark_done()
+
+        self.screen.clear()
+

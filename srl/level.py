@@ -3,9 +3,10 @@ from srl.util import random_coords
 from srl.context_drawable import ContextDrawable
 
 class Level(ContextDrawable):
-    def __init__(self, n=1):
-        self.n = n
+    def __init__(self, ctx, idx):
+        self.number = idx
         self.drawables = set()
+        self.generate(ctx)
 
     def generate(self, ctx):
         # make a level-down and a level-up

@@ -44,3 +44,5 @@ class Drawable(ContextDrawable):
     def handle_collisions(self, ctx):
         if self.coords() == ctx.player.coords():
             ctx.debug('zomg, a collision with {}'.format(self.glyph))
+            self.on_collision(ctx)
+

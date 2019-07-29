@@ -11,3 +11,6 @@ class ContextDrawable(ABC):
     @abstractmethod
     def handle_collisions(self, ctx):
         pass
+
+    def on_collision(self, ctx):
+        pass
