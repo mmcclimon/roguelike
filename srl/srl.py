@@ -1,43 +1,18 @@
 import curses
-#from srl.context import Context
-
-PLAYER_CHAR = '@'
+from srl.context import Context, UserQuit
 
 class SRL:
     def run():
         try:
             curses.wrapper(SRL.main)
-        except KeyboardInterrupt:
-            return
+        except (KeyboardInterrupt, UserQuit):
+            pass
 
         print('goodbye')
 
     def main(screen):
-        screen.clear()
-
-        # this is y, x, because curses.
-        player_y = 0
-        player_x = 0
+        ctx = Context(screen)
 
         while True:
             # Draw our at-sign
-            this_x, this_y = player_x, player_y
-            screen.addch(this_y, this_x, PLAYER_CHAR)
-            screen.move(this_y, this_x)
-
-            k = screen.getkey()
-
-            if k == 'j':
-                player_y += 1
-            if k == 'k':
-                player_y -= 1
-            if k == 'l':
-                player_x += 1
-            if k == 'h':
-                player_x -= 1
-
-            if k == 'q':
-                return
-
-            # eventually this will be a clear, but for now let's put a dot.
-            screen.addch(this_y, this_x, '.')
+            ctx.loop_once()
