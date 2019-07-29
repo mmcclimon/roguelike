@@ -1,5 +1,6 @@
 import curses
-from srl.context import Context, UserQuit
+from srl.context import Context
+from srl.exceptions import UserQuit
 
 class SRL:
     @classmethod

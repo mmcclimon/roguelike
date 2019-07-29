@@ -1,0 +1,2 @@
+class UserQuit(Exception):
+    pass
