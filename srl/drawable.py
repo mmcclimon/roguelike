@@ -21,6 +21,10 @@ class Drawable(ContextDrawable):
     def glyph(self):
         return self._glyph
 
+    def move_to(self, y, x):
+        self._x = x
+        self._y = y
+
     def move_left(self, dist=1):
         self._x -= dist
 

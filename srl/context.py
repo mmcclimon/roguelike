@@ -81,6 +81,7 @@ class Context:
             self.create_level()
 
         self.level_idx += 1
+        self.player.move_to(*self.current_level.way_up.coords())
         self.screen.clear()
 
     def ascend(self):
@@ -88,5 +89,6 @@ class Context:
         if self.level_idx < 0:
             self.mark_done()
 
+        self.player.move_to(*self.current_level.way_down.coords())
         self.screen.clear()
 

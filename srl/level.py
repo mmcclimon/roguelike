@@ -6,12 +6,15 @@ class Level(ContextDrawable):
     def __init__(self, ctx, idx):
         self.number = idx
         self.drawables = set()
+        self.way_down = None
+        self.way_up = None
+
         self.generate(ctx)
 
     def generate(self, ctx):
         # make a level-down and a level-up
-        self.place_randomly(ctx, StairsDown)
-        self.place_randomly(ctx, StairsUp)
+        self.way_down = self.place_randomly(ctx, StairsDown)
+        self.way_up   = self.place_randomly(ctx, StairsUp)
 
     def draw(self, ctx):
         for thing in self.drawables:
@@ -25,3 +28,4 @@ class Level(ContextDrawable):
         y, x = random_coords(ctx)
         thing = cls(x=x, y=y)
         self.drawables.add(thing)
+        return thing
