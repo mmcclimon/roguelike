@@ -2,9 +2,10 @@ import curses
 from srl.context import Context, UserQuit
 
 class SRL:
-    def run():
+    @classmethod
+    def run(cls):
         try:
-            curses.wrapper(SRL.main)
+            curses.wrapper(cls.main)
         except (KeyboardInterrupt, UserQuit):
             pass
 

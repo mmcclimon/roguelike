@@ -1,40 +1,36 @@
+from srl.player import Player
 # Janky
 class UserQuit(Exception):
     pass
 
 class Context:
-    PLAYER_CHAR = '@'
-
     def __init__(self, screen):
-        self._s = screen
-        self.player_x = 0
-        self.player_y = 0
+        self.screen = screen
+        self.player = Player()
 
-        self._s.clear()
+        self.screen.clear()
 
     def loop_once(self):
-        screen = self._s
+        this_y, this_x = self.player.coords()   # temporary
 
-        this_x, this_y = self.player_x, self.player_y
-        screen.addch(this_y, this_x, self.PLAYER_CHAR)
-        screen.move(this_y, this_x)
+        self.player.draw(self)
 
-        k = screen.getkey()
+        k = self.screen.getkey()
         self.handle_key(k)
 
-        # eventually this will be a clear, but for now let's put a dot.
-        screen.addch(this_y, this_x, '.')
+        self.screen.addch(this_y, this_x, '.')  # temporary
+
 
     # eventually: some abstraction.
     def handle_key(self, k):
         if k == 'j':
-            self.player_y += 1
+            self.player.move_down()
         if k == 'k':
-            self.player_y -= 1
+            self.player.move_up()
         if k == 'l':
-            self.player_x += 1
+            self.player.move_right()
         if k == 'h':
-            self.player_x -= 1
+            self.player.move_left()
 
         if k == 'q':
             raise UserQuit
