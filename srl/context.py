@@ -20,7 +20,13 @@ class Context:
         screen.move(this_y, this_x)
 
         k = screen.getkey()
+        self.handle_key(k)
 
+        # eventually this will be a clear, but for now let's put a dot.
+        screen.addch(this_y, this_x, '.')
+
+    # eventually: some abstraction.
+    def handle_key(self, k):
         if k == 'j':
             self.player_y += 1
         if k == 'k':
@@ -33,5 +39,3 @@ class Context:
         if k == 'q':
             raise UserQuit
 
-        # eventually this will be a clear, but for now let's put a dot.
-        screen.addch(this_y, this_x, '.')
