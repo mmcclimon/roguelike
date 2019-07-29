@@ -15,6 +15,6 @@ class SRL:
     def main(screen):
         ctx = Context(screen)
 
-        while True:
+        while ctx.is_running:
             # Draw our at-sign
             ctx.loop_once()

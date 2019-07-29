@@ -22,6 +22,7 @@ class Keymap:
         self.add_key('j', lambda ctx, key: ctx.player.move_down(),  'move down one step')
         self.add_key('k', lambda ctx, key: ctx.player.move_up(),    'move up one step')
         self.add_key('l', lambda ctx, key: ctx.player.move_right(), 'move right one step')
+
         self.add_key('q', lambda ctx, key: my_raise(UserQuit),      'quit')
 
     def add_key(self, key_name, func, doc):
@@ -29,5 +30,9 @@ class Keymap:
         self._keys[key_name] = key_obj
 
     def handle_key(self, ctx, key):
-        obj = self._keys[key]
-        obj.call(ctx, key)
+        ctx.debug('handling {}'.format(key))
+        try:
+            obj = self._keys[key]
+            obj.call(ctx, key)
+        except KeyError:
+            pass

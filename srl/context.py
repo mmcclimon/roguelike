@@ -1,3 +1,4 @@
+import curses
 from srl.player import Player
 from srl.keymap import Keymap
 
@@ -9,9 +10,21 @@ class Context:
         self.screen = screen
         self.player = Player(trace=True)
         self.keymap = Keymap()
+        self._is_running = True
 
         self.drawables = set([ self.player ])
         self.screen.clear()
+
+        # draw our lil debugging window
+        self.cmd_win = curses.newwin(1, curses.COLS, curses.LINES-1, 0)
+        self.cmd_win.addstr(0, 0, '[debug]')
+
+        self.screen.refresh()
+        self.cmd_win.refresh()
+
+    @property
+    def is_running(self):
+        return self._is_running
 
     def loop_once(self):
         for thing in self.drawables:
@@ -27,5 +40,10 @@ class Context:
     def handle_input(self):
         k = self.screen.getkey()
         self.keymap.handle_key(self, k)
+
+    def debug(self, msg):
+        self.cmd_win.clear()
+        self.cmd_win.addstr(0, 0, '[debug] ' + msg)
+        self.cmd_win.refresh()
 
 
