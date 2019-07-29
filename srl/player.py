@@ -9,7 +9,6 @@ class Player(Drawable):
     # also move the cursor position to ourselves
     def draw(self, ctx):
         super().draw(ctx)
-        ctx.screen.move(*self.coords())
 
     def post_loop_hook(self, ctx):
         if not self.trace:

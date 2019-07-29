@@ -1,7 +1,8 @@
 from srl.things import StairsDown, StairsUp
 from srl.util import random_coords
+from srl.context_drawable import ContextDrawable
 
-class Level:
+class Level(ContextDrawable):
     def __init__(self, n=1):
         self.n = n
         self.drawables = set()
@@ -14,9 +15,6 @@ class Level:
     def draw(self, ctx):
         for thing in self.drawables:
             thing.draw(ctx)
-
-    def post_loop_hook(self, ctx):
-        pass
 
     def place_randomly(self, ctx, cls):
         y, x = random_coords(ctx)

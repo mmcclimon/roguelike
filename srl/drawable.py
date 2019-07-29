@@ -1,4 +1,6 @@
-class Drawable():
+from srl.context_drawable import ContextDrawable
+
+class Drawable(ContextDrawable):
     def __init__(self, *args, **kwargs):
         self._x = kwargs['x']
         self._y = kwargs['y']
@@ -38,6 +40,3 @@ class Drawable():
     def draw(self, ctx):
         self._last_y, self._last_x = self.coords()
         ctx.screen.addstr(*self.coords(), self.glyph)
-
-    def post_loop_hook(self, ctx):
-        pass

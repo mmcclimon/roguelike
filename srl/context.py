@@ -35,6 +35,7 @@ class Context:
         for thing in self.drawables:
             thing.draw(self)
 
+        self.relocate_cursor()
         self.screen.refresh()
         self.handle_input()
 
@@ -42,6 +43,8 @@ class Context:
         for thing in self.drawables:
             thing.post_loop_hook(self)
 
+    def relocate_cursor(self):
+        self.screen.move(*self.player.coords())
 
     def handle_input(self):
         k = self.screen.getkey()
