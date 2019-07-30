@@ -5,13 +5,12 @@ from srl.exceptions import UserQuit
 class SRL:
     @classmethod
     def run(cls):
-        outcome = None
         try:
-            outcome = curses.wrapper(cls.main)
+            res = curses.wrapper(cls.main)
         except (KeyboardInterrupt):
             pass
 
-        outcome.dump()
+        res.print()
 
     def main(screen):
         ctx = Context(screen)
@@ -20,5 +19,5 @@ class SRL:
             ctx.loop_once()
 
         # When this is done, it'll set context.outcome
-        return ctx.outcome
+        return ctx.generate_result()
 

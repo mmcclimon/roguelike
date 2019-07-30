@@ -2,7 +2,7 @@ import curses
 from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
-from srl.outcome import Outcome
+from srl.result  import Result
 from srl.screen_collection import ScreenCollection
 
 class Context:
@@ -12,7 +12,6 @@ class Context:
         self.map = self.screens.map
 
         self._is_running = True
-        self.outcome = Outcome(self, success=False)
 
         self.player = Player()
         self.keymap = Keymap()
@@ -51,6 +50,9 @@ class Context:
     def debug(self, msg):
         self.screens.debug.write_text(self, msg)
 
+    def generate_result(self):
+        return Result(self)
+
     @property
     def drawables(self):
         return [ self.current_level, self.player ]
@@ -82,9 +84,10 @@ class Context:
 
     def ascend(self):
         self.level_idx -= 1
+        self.debug('set level index to {}'.format(self.level_idx))
         if self.level_idx < 0:
-            self.outcome = Outcome(self, success=True)
             self.mark_done()
+            return
 
         self.player.move_to(*self.current_level.way_down.coords())
         self.map.clear()
