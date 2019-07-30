@@ -3,19 +3,19 @@ from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
 from srl.outcome import Outcome
+from srl.screen import Screen
 
 class Context:
-    def __init__(self, screen):
-        self.screen = screen
+    def __init__(self, stdscr):
+        # draw our windows
+        self.screen = Screen(stdscr)
+        self.map_win = self.screen.map_win
+        self.cmd_win = self.screen.cmd_win
+        self.info_win = self.screen.info_win
+
         self._is_running = True
         self.outcome = Outcome(self, success=False)
 
-        # draw map window
-        self.map_win = curses.newwin(25, 80, 0, 0)
-
-        # draw our lil debugging window
-        self.cmd_win = curses.newwin(1, curses.COLS, curses.LINES-1, 0)
-        self.cmd_win.addstr(0, 0, '[debug]')
 
         self.player = Player(trace=True)
         self.keymap = Keymap()
@@ -27,30 +27,37 @@ class Context:
         self.create_level()
         self.player.move_to(*self.current_level.way_up.coords())
 
-        self.screen.clear()
-        self.refresh_all()
+        self.screen.refresh()
 
     def create_level(self):
         l = Level(self, self.level_idx)
         self.levels.append(l)
 
-    def refresh_all(self):
-        self.map_win.refresh()
-        self.cmd_win.refresh()
-
     def loop_once(self):
-        # draw it.
-        for thing in self.drawables:
-            thing.draw(self)
+        self.draw_map()
+        self.draw_info()
 
         self.relocate_cursor()
-        self.map_win.refresh()
+
         self.handle_input()
         self.handle_collisions()
 
         # I'm not thrilled about this, but hey
         for thing in self.drawables:
             thing.post_loop_hook(self)
+
+    def draw_map(self):
+        for thing in self.drawables:
+            thing.draw(self)
+
+        self.map_win.refresh()
+
+    def draw_info(self):
+        self.cmd_win.clear()
+
+        level_str = 'Level {}'.format(self.level_idx)
+        self.info_win.addstr(0, 0, level_str)
+        self.info_win.refresh()
 
     def relocate_cursor(self):
         self.map_win.move(*self.player.coords())
@@ -89,6 +96,9 @@ class Context:
         self.level_idx += 1
         self.player.move_to(*self.current_level.way_up.coords())
         self.map_win.clear()
+
+    def set_info(self, lines):
+        self.info = lines
 
     def ascend(self):
         self.level_idx -= 1
