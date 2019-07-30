@@ -43,7 +43,7 @@ class Drawable(ContextDrawable):
 
     def draw(self, ctx):
         self._last_y, self._last_x = self.coords()
-        ctx.map_win.addstr(*self.coords(), self.glyph)
+        ctx.map.addstr(*self.coords(), self.glyph)
 
     def handle_collisions(self, ctx):
         if self.coords() == ctx.player.coords():

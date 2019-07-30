@@ -1,6 +1,5 @@
-from srl.things import StairsDown, StairsUp
-from srl.util import random_coords
 from srl.context_drawable import ContextDrawable
+from srl.things import StairsDown, StairsUp
 
 class Level(ContextDrawable):
     def __init__(self, ctx, idx):
@@ -25,7 +24,7 @@ class Level(ContextDrawable):
             thing.handle_collisions(ctx)
 
     def place_randomly(self, ctx, cls):
-        y, x = random_coords(ctx)
+        y, x = ctx.map.random_coords()
         thing = cls(x=x, y=y)
         self.drawables.add(thing)
         return thing

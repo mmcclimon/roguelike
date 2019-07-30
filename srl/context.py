@@ -3,15 +3,13 @@ from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
 from srl.outcome import Outcome
-from srl.screen import Screen
+from srl.screen_collection import ScreenCollection
 
 class Context:
     def __init__(self, stdscr):
         # draw our windows
-        self.screen = Screen(stdscr)
-        self.map_win = self.screen.map_win
-        self.cmd_win = self.screen.cmd_win
-        self.info_win = self.screen.info_win
+        self.screens = ScreenCollection(stdscr)
+        self.map = self.screens.map
 
         self._is_running = True
         self.outcome = Outcome(self, success=False)
@@ -26,17 +24,17 @@ class Context:
         self.create_level()
         self.player.move_to(*self.current_level.way_up.coords())
 
-        self.screen.refresh()
+        self.screens.refresh()
 
     def create_level(self):
         l = Level(self, self.level_idx)
         self.levels.append(l)
 
     def loop_once(self):
-        self.draw_map()
-        self.draw_info()
-
+        self.screens.map.draw(self, refresh=False)
+        self.screens.info.draw(self, refresh=False)
         self.relocate_cursor()
+        self.screens.refresh()
 
         self.handle_input()
         self.handle_collisions()
@@ -45,26 +43,11 @@ class Context:
         for thing in self.drawables:
             thing.post_loop_hook(self)
 
-    def draw_map(self):
-        self.map_win.clear()
-
-        for thing in self.drawables:
-            thing.draw(self)
-
-        self.map_win.refresh()
-
-    def draw_info(self):
-        self.cmd_win.clear()
-
-        level_str = 'Level {}'.format(self.level_idx)
-        self.info_win.addstr(0, 0, level_str)
-        self.info_win.refresh()
-
     def relocate_cursor(self):
-        self.map_win.move(*self.player.coords())
+        self.map.move(*self.player.coords())
 
     def handle_input(self):
-        k = self.map_win.getkey()
+        k = self.screens.stdscr.getkey()
         self.keymap.handle_key(self, k)
 
     def handle_collisions(self):
@@ -72,9 +55,7 @@ class Context:
             thing.handle_collisions(self)
 
     def debug(self, msg):
-        self.cmd_win.clear()
-        self.cmd_win.addstr(0, 0, '[debug] ' + msg)
-        self.cmd_win.refresh()
+        self.screens.debug.write_text(self, msg)
 
     def is_running(self):
         return self._is_running
@@ -96,10 +77,6 @@ class Context:
 
         self.level_idx += 1
         self.player.move_to(*self.current_level.way_up.coords())
-        self.map_win.clear()
-
-    def set_info(self, lines):
-        self.info = lines
 
     def ascend(self):
         self.level_idx -= 1
@@ -108,5 +85,5 @@ class Context:
             self.mark_done()
 
         self.player.move_to(*self.current_level.way_down.coords())
-        self.map_win.clear()
+        self.map.clear()
 
