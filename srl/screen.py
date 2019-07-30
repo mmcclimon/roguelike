@@ -9,8 +9,13 @@ class Screen:
         # draw map window
         self.map_win = curses.newwin(25, 80, 0, 0)
 
+        stdscr.hline(25, 0, curses.ACS_HLINE, 80)
+        stdscr.vline(0, 80, curses.ACS_VLINE, 25)
+        stdscr.addch(25, 80, curses.ACS_LRCORNER)
+        stdscr.refresh()
+
         # draw info window
-        self.info_win = curses.newwin(25, 80, 26, 0)
+        self.info_win = curses.newwin(25, 80, 27, 0)
 
         # draw our lil debugging window
         self.cmd_win = curses.newwin(1, curses.COLS, curses.LINES-1, 0)

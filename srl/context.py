@@ -16,8 +16,7 @@ class Context:
         self._is_running = True
         self.outcome = Outcome(self, success=False)
 
-
-        self.player = Player(trace=True)
+        self.player = Player()
         self.keymap = Keymap()
 
         self.levels = []
@@ -47,6 +46,8 @@ class Context:
             thing.post_loop_hook(self)
 
     def draw_map(self):
+        self.map_win.clear()
+
         for thing in self.drawables:
             thing.draw(self)
 
