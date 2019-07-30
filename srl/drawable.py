@@ -1,40 +1,40 @@
 from srl.context_drawable import ContextDrawable
 
 class Drawable(ContextDrawable):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, desc='', is_passable=True, **kwargs):
         self._x = kwargs['x']
         self._y = kwargs['y']
-        self._glyph = kwargs['glyph']
+        self.glyph = kwargs['glyph']
+
+        self._desc  = desc
+        self.is_passable = is_passable
 
         self._last_x = self.x
         self._last_y = self.y
 
     @property
-    def x(self):
-        return self._x
+    def x(self): return self._x
 
     @property
-    def y(self):
-        return self._y
+    def y(self): return self._y
 
     @property
-    def glyph(self):
-        return self._glyph
+    def description(self): return self._desc
 
     def move_to(self, y, x):
         self._x = x
         self._y = y
 
-    def move_left(self, dist=1):
+    def move_left(self, ctx, dist=1):
         self._x -= dist
 
-    def move_right(self, dist=1):
+    def move_right(self, ctx, dist=1):
         self._x += dist
 
-    def move_up(self, dist=1):
+    def move_up(self, ctx, dist=1):
         self._y -= dist
 
-    def move_down(self, dist=1):
+    def move_down(self, ctx, dist=1):
         self._y += dist
 
     # return y, x to pass directly to curses
