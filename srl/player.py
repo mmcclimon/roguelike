@@ -13,9 +13,3 @@ class Player(Drawable):
     # a player cannot collide with themselves
     def handle_collisions(self, ctx):
         pass
-
-    def post_loop_hook(self, ctx):
-        if not self.trace:
-            return
-
-        ctx.map.addch(self._last_y, self._last_x, '.')

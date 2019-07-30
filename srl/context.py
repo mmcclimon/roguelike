@@ -39,10 +39,6 @@ class Context:
         self.handle_input()
         self.handle_collisions()
 
-        # I'm not thrilled about this, but hey
-        for thing in self.drawables:
-            thing.post_loop_hook(self)
-
     def relocate_cursor(self):
         self.map.move(*self.player.coords())
 
