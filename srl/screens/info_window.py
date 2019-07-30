@@ -6,7 +6,7 @@ class InfoWindow(BaseWindow):
         self.text = ''
 
     def draw(self, ctx, refresh=True):
-        self.window.clear()
+        self.window.erase()
 
         level_str = 'Level {}'.format(ctx.level_idx)
         self.window.addstr(0, 0, level_str)

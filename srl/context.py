@@ -26,21 +26,19 @@ class Context:
 
         self.screens.refresh()
 
-    def create_level(self):
-        l = Level(self, self.level_idx)
-        self.levels.append(l)
-
     def loop_once(self):
+        """ The main run loop.
+        Draw all of our screens, wait for input, then do something about it.
+        """
+        # draw
         self.screens.map.draw(self, refresh=False)
         self.screens.info.draw(self, refresh=False)
-        self.relocate_cursor()
+        self.player.attract_cursor(self)
         self.screens.refresh()
 
+        # act
         self.handle_input()
         self.handle_collisions()
-
-    def relocate_cursor(self):
-        self.map.move(*self.player.coords())
 
     def handle_input(self):
         k = self.screens.stdscr.getkey()
@@ -53,19 +51,27 @@ class Context:
     def debug(self, msg):
         self.screens.debug.write_text(self, msg)
 
+    @property
+    def drawables(self):
+        return [ self.current_level, self.player ]
+
+    # Loop control plumbing
+    # ---------------------
     def is_running(self):
         return self._is_running
 
     def mark_done(self):
         self._is_running = False
 
+    # Level management code
+    # ---------------------
+    def create_level(self):
+        l = Level(self, self.level_idx)
+        self.levels.append(l)
+
     @property
     def current_level(self):
         return self.levels[ self.level_idx ]
-
-    @property
-    def drawables(self):
-        return [ self.current_level, self.player ]
 
     def descend(self):
         if self.current_level == self.levels[-1]:

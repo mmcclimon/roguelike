@@ -8,7 +8,7 @@ class DebugWindow(BaseWindow):
         self.window.addstr(0, 0, '[debug]')
 
     def draw(self, ctx, refresh=True):
-        self.window.clear()
+        self.window.erase()
         debug_str = '[debug] {}'.format(self.text)
         self.window.addstr(0, 0, debug_str)
 

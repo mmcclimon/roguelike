@@ -11,7 +11,7 @@ class MapWindow(BaseWindow):
         return getattr(self.window, name)
 
     def draw(self, ctx, refresh=True):
-        self.window.clear()
+        self.window.erase()
 
         for thing in ctx.drawables:
             thing.draw(ctx)

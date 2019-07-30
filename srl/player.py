@@ -13,3 +13,6 @@ class Player(Drawable):
     # a player cannot collide with themselves
     def handle_collisions(self, ctx):
         pass
+
+    def attract_cursor(self, ctx):
+        ctx.map.move(*self.coords())
