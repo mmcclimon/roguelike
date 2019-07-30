@@ -7,7 +7,7 @@ class ScreenCollection:
         self.stdscr.clear()
 
         # draw map window
-        map_win = curses.newwin(25, 80, 0, 0)
+        map_win = curses.newpad(26, 80)
         self.map = MapWindow(map_win)
 
         stdscr.hline(25, 0, curses.ACS_HLINE, 80)
@@ -26,5 +26,5 @@ class ScreenCollection:
     def refresh(self):
         self.debug.noutrefresh()
         self.info.noutrefresh()
-        self.map.noutrefresh()
+        self.map.noutrefresh(*self.map.refresh_args)
         curses.doupdate()
