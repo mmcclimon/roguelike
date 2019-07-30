@@ -1,4 +1,5 @@
 from srl.drawable import Drawable
+from srl.util import Direction
 
 class Player(Drawable):
     def __init__(self, x=0, y=0, trace=False):
@@ -13,7 +14,7 @@ class Player(Drawable):
         ctx.map.move(*self.coords())
 
     def can_move_to(self, ctx, y, x):
-        if not ctx.map.enclose(y,x):
+        if not ctx.map.contains(y,x):
             return False
 
         thing = ctx.current_level.thing_at(y, x)
@@ -25,9 +26,20 @@ class Player(Drawable):
 
         return False
 
-    def move_left(self, ctx, dist=1):
-        this_y, this_x = self.coords()
-        if self.can_move_to(ctx, this_y, this_x - dist):
-            super().move_left(ctx, dist)
+    def _move_direction(self, ctx, dir_str, func):
+        if self.can_move_to(ctx, *self.coords_for(Direction[dir_str])):
+            func(ctx)
         else:
-            ctx.debug('cannot move left!')
+            ctx.debug('cannot move {}!'.format(dir_str))
+
+    def move_left(self, ctx):
+        return self._move_direction(ctx, 'left', super().move_left)
+
+    def move_right(self, ctx):
+        return self._move_direction(ctx, 'right', super().move_right)
+
+    def move_up(self, ctx):
+        return self._move_direction(ctx, 'up', super().move_up)
+
+    def move_down(self, ctx):
+        return self._move_direction(ctx, 'down', super().move_down)

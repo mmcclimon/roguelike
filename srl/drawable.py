@@ -1,4 +1,5 @@
 from srl.context_drawable import ContextDrawable
+from srl.util import Direction
 
 class Drawable(ContextDrawable):
     def __init__(self, desc='', is_passable=True, **kwargs):
@@ -25,17 +26,17 @@ class Drawable(ContextDrawable):
         self._x = x
         self._y = y
 
-    def move_left(self, ctx, dist=1):
-        self._x -= dist
+    def move_left(self, ctx):
+        self.move_to(*self.coords_for(Direction.left))
 
-    def move_right(self, ctx, dist=1):
-        self._x += dist
+    def move_right(self, ctx):
+        self.move_to(*self.coords_for(Direction.right))
 
-    def move_up(self, ctx, dist=1):
-        self._y -= dist
+    def move_up(self, ctx):
+        self.move_to(*self.coords_for(Direction.up))
 
-    def move_down(self, ctx, dist=1):
-        self._y += dist
+    def move_down(self, ctx):
+        self.move_to(*self.coords_for(Direction.down))
 
     # return y, x to pass directly to curses
     def coords(self):
@@ -50,3 +51,17 @@ class Drawable(ContextDrawable):
             ctx.debug('zomg, a collision with {}'.format(self.glyph))
             self.on_collision(ctx)
 
+    def coords_for(self, direction):
+        if direction == Direction.left:
+            return self.y, self.x - 1
+
+        if direction == Direction.right:
+            return self.y, self.x + 1
+
+        if direction == Direction.up:
+            return self.y - 1, self.x
+
+        if direction == Direction.down:
+            return self.y + 1, self.x
+
+        raise ValueError("unknown direction {}".format(direction))
