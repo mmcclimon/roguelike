@@ -1,5 +1,5 @@
 from srl.context_drawable import ContextDrawable
-from srl.things import StairsDown, StairsUp
+from srl.map_objects import StairsDown, StairsUp
 
 class Level(ContextDrawable):
     def __init__(self, ctx, idx):
