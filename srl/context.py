@@ -2,11 +2,13 @@ import curses
 from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
+from srl.outcome import Outcome
 
 class Context:
     def __init__(self, screen):
         self.screen = screen
         self._is_running = True
+        self.outcome = Outcome(self, success=False)
 
         # draw map window
         self.map_win = curses.newwin(25, 80, 0, 0)
@@ -91,6 +93,7 @@ class Context:
     def ascend(self):
         self.level_idx -= 1
         if self.level_idx < 0:
+            self.outcome = Outcome(self, success=True)
             self.mark_done()
 
         self.player.move_to(*self.current_level.way_down.coords())
