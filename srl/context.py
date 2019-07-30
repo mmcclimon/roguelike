@@ -8,6 +8,9 @@ class Context:
         self.screen = screen
         self._is_running = True
 
+        # draw map window
+        self.map_win = curses.newwin(25, 80, 0, 0)
+
         # draw our lil debugging window
         self.cmd_win = curses.newwin(1, curses.COLS, curses.LINES-1, 0)
         self.cmd_win.addstr(0, 0, '[debug]')
@@ -20,6 +23,7 @@ class Context:
 
         # generate the first level
         self.create_level()
+        self.player.move_to(*self.current_level.way_up.coords())
 
         self.screen.clear()
         self.refresh_all()
@@ -29,7 +33,7 @@ class Context:
         self.levels.append(l)
 
     def refresh_all(self):
-        self.screen.refresh()
+        self.map_win.refresh()
         self.cmd_win.refresh()
 
     def loop_once(self):
@@ -38,7 +42,7 @@ class Context:
             thing.draw(self)
 
         self.relocate_cursor()
-        self.screen.refresh()
+        self.map_win.refresh()
         self.handle_input()
         self.handle_collisions()
 
@@ -47,10 +51,10 @@ class Context:
             thing.post_loop_hook(self)
 
     def relocate_cursor(self):
-        self.screen.move(*self.player.coords())
+        self.map_win.move(*self.player.coords())
 
     def handle_input(self):
-        k = self.screen.getkey()
+        k = self.map_win.getkey()
         self.keymap.handle_key(self, k)
 
     def handle_collisions(self):
@@ -82,7 +86,7 @@ class Context:
 
         self.level_idx += 1
         self.player.move_to(*self.current_level.way_up.coords())
-        self.screen.clear()
+        self.map_win.clear()
 
     def ascend(self):
         self.level_idx -= 1
@@ -90,5 +94,5 @@ class Context:
             self.mark_done()
 
         self.player.move_to(*self.current_level.way_down.coords())
-        self.screen.clear()
+        self.map_win.clear()
 

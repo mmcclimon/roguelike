@@ -18,4 +18,4 @@ class Player(Drawable):
         if not self.trace:
             return
 
-        ctx.screen.addch(self._last_y, self._last_x, '.')
+        ctx.map_win.addch(self._last_y, self._last_x, '.')
