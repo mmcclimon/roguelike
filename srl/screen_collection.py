@@ -24,6 +24,7 @@ class ScreenCollection:
         self.debug = DebugWindow(debug_win)
 
     def refresh(self):
-        self.debug.refresh()
-        self.info.refresh()
-        self.map.refresh()
+        self.debug.noutrefresh()
+        self.info.noutrefresh()
+        self.map.noutrefresh()
+        curses.doupdate()
