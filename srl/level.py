@@ -5,6 +5,7 @@ class Level(ContextDrawable):
     def __init__(self, ctx, idx):
         self.number = idx
         self.drawables = set()
+        self.locs = set()
         self.way_down = None
         self.way_up = None
 
@@ -25,6 +26,13 @@ class Level(ContextDrawable):
 
     def place_randomly(self, ctx, cls):
         y, x = ctx.map.random_coords()
+        while self.has_object_at(y, x):
+            y, x = ctx.map.random_coords()
+
         thing = cls(x=x, y=y)
         self.drawables.add(thing)
+        self.locs.add((y, x))
         return thing
+
+    def has_object_at(self, y, x):
+        return (y, x) in self.locs
