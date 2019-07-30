@@ -13,7 +13,7 @@ class Player(Drawable):
         ctx.map.move(*self.coords())
 
     def can_move_to(self, ctx, y, x):
-        if not ctx.map.contains(y,x):
+        if not ctx.map.enclose(y,x):
             return False
 
         thing = ctx.current_level.thing_at(y, x)
