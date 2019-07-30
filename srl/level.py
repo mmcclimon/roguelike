@@ -1,5 +1,5 @@
 from srl.context_drawable import ContextDrawable
-from srl.map_objects import StairsDown, StairsUp
+from srl.map_objects import StairsDown, StairsUp, Boulder
 
 class Level(ContextDrawable):
     def __init__(self, ctx, idx):
@@ -15,6 +15,9 @@ class Level(ContextDrawable):
         # make a level-down and a level-up
         self.way_down = self.place_randomly(ctx, StairsDown)
         self.way_up   = self.place_randomly(ctx, StairsUp)
+
+        for i in range(3):
+            self.place_randomly(ctx, Boulder)
 
     def draw(self, ctx):
         for thing in self.drawables:
