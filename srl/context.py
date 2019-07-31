@@ -49,6 +49,9 @@ class Context:
     def debug(self, msg):
         self.screens.debug.write_text(self, msg)
 
+    def info(self, msg):
+        self.screens.info.write_text(self, msg)
+
     def generate_result(self):
         return Result(self)
 

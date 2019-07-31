@@ -38,3 +38,5 @@ class Monster(Drawable):
         ctx.current_level.drawables.remove(me)
         self.is_alive = False
 
+        ctx.info('You killed a {}.'.format(self.description))
+

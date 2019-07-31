@@ -6,7 +6,7 @@ class GridBug(Monster):
                 x=x,
                 y=y,
                 glyph='X',
-                desc='boulder',
+                desc='grid bug',
                 # is_passable=False
                 hp=1,
                 damage=1,
