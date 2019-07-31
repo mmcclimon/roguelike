@@ -11,9 +11,10 @@ class StatusWindow(BaseWindow):
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
-        fmt = 'Lvl {}'
+        fmt = 'Lvl:{} HP:{}'
         line = fmt.format(
-                ctx.level_idx
+                ctx.level_idx,
+                ctx.player.hp
                 )
 
         self.window.addstr(0, 0, line)

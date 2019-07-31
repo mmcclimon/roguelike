@@ -1,10 +1,13 @@
 from srl.context_drawable import ContextDrawable
-from srl.map_objects import StairsDown, StairsUp, Boulder
+from srl.map_objects import StairsDown, StairsUp, Boulder, GridBug
 
 class Level(ContextDrawable):
     def __init__(self, ctx, idx):
         self.number = idx
         self.drawables = set()
+
+        # XXX this is keyed by coordinates. That's not great, because things
+        # will be able to move. We should key this by thing instead, I think.
         self.objects = dict()
         self.way_down = None
         self.way_up = None
@@ -19,12 +22,16 @@ class Level(ContextDrawable):
         for i in range(3):
             self.place_randomly(ctx, Boulder)
 
+        self.place_randomly(ctx, GridBug)
+
     def draw(self, ctx):
         for thing in self.drawables:
             thing.draw(ctx)
 
     def handle_collisions(self, ctx):
-        for thing in self.drawables:
+        # Take a local copy in case our drawable disappears during iteration
+        to_draw = self.drawables.copy()
+        for thing in to_draw:
             thing.handle_collisions(ctx)
 
     def place_randomly(self, ctx, cls):

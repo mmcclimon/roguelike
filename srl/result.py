@@ -5,6 +5,9 @@ class Result:
     def print(self):
         if self.ctx.level_idx < 0:
             print('You won!')
+            return
+
+        if self.ctx.player.is_alive:
+            print('You quit, like a coward')
         else:
-            print('You lost. :(')
-        print('goodbye')
+            print('You died. :(')

@@ -2,9 +2,10 @@ from srl.drawable import Drawable
 from srl.util import Direction
 
 class Player(Drawable):
-    def __init__(self, x=0, y=0, trace=False):
+    def __init__(self, x=0, y=0, hp=10):
         super().__init__(x=x, y=y, glyph='@')
-        self.trace = trace
+        self.hp = hp
+        self.is_alive = True
 
     # a player cannot collide with themselves
     def handle_collisions(self, ctx):
@@ -43,3 +44,14 @@ class Player(Drawable):
 
     def move_down(self, ctx):
         return self._move_direction(ctx, 'down', super().move_down)
+
+    def do_damage(self, ctx, damage):
+        self.hp -= damage
+
+        if self.hp <= 0:
+            self.die(ctx)
+
+    def die(self, ctx):
+        self.is_alive = False
+        ctx.mark_done()
+
