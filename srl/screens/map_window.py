@@ -8,9 +8,9 @@ class MapWindow(BaseWindow):
     def __init__(self, window):
         super().__init__(window)
         max_y, max_x = self.window.getmaxyx()
-        self.max_y = max_y - 1
+        self.max_y = max_y - 2
         self.max_x = max_x
-        self.refresh_args = [0,0, 0,0, self.max_y - 1, self.max_x]
+        self.refresh_args = [0,0, 1,0, self.max_y, self.max_x]
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
@@ -24,15 +24,8 @@ class MapWindow(BaseWindow):
     def random_coords(self):
         return random.randrange(self.max_y), random.randrange(self.max_x)
 
-    # like enclose(), but returns false for the rightmost edge
+    # Can we actually draw a thing at y,x?
     def contains(self, y, x):
-        if not self.enclose(y,x):
-            return False
-
-        if y == self.max_y:
-            return False
-
-        if x == self.max_x:
-            return False
-
+        if y < 0 or y >= self.max_y: return False
+        if x < 0 or x >= self.max_x: return False
         return True

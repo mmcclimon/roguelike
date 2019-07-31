@@ -26,12 +26,11 @@ class Context:
         self.screens.refresh()
 
     def loop_once(self):
-        """ The main run loop.
+        '''The main run loop.
         Draw all of our screens, wait for input, then do something about it.
-        """
+        '''
         # draw
-        self.screens.map.draw(self, refresh=False)
-        self.screens.info.draw(self, refresh=False)
+        self.screens.draw(self, refresh=False)
         self.player.attract_cursor(self)
         self.screens.refresh()
 

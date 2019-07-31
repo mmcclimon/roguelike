@@ -24,7 +24,6 @@ class Keymap:
         self._keys[key_name] = key_obj
 
     def handle_key(self, ctx, key):
-        ctx.debug('handling {}'.format(key))
         try:
             obj = self._keys[key]
             obj.call(ctx, key)
