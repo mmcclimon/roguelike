@@ -39,9 +39,7 @@ class Monster(Drawable):
     # XXX this is bad
     def die(self, ctx):
         # remove ourselves from our level
-        me = ctx.current_level.objects[ self.coords() ]
-        del ctx.current_level.objects[ self.coords() ]
-        ctx.current_level.drawables.remove(me)
+        ctx.current_level.drawables.remove(self)
         self.is_alive = False
 
         ctx.info('You killed a {}.'.format(self.description), expire_after=2)

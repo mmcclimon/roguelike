@@ -6,9 +6,6 @@ class Level(ContextDrawable):
         self.number = idx
         self.drawables = set()
 
-        # XXX this is keyed by coordinates. That's not great, because things
-        # will be able to move. We should key this by thing instead, I think.
-        self.objects = dict()
         self.way_down = None
         self.way_up = None
 
@@ -45,14 +42,14 @@ class Level(ContextDrawable):
 
         thing = cls(x=x, y=y)
         self.drawables.add(thing)
-        self.objects[(y, x)] = thing
         return thing
 
     def has_thing_at(self, y, x):
-        return (y, x) in self.objects
+        return bool(self.thing_at(y, x))
 
     def thing_at(self, y, x):
+        lookup = { obj.coords(): obj for obj in self.drawables }
         try:
-            return self.objects[(y, x)]
+            return lookup[(y, x)]
         except KeyError:
             return None
