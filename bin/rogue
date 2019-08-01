@@ -4,5 +4,5 @@
 import sys,os
 sys.path.append(os.path.join(os.path.dirname(sys.argv[0]), '..'))
 
-from srl import SRL
-SRL.run()
+import srl
+srl.run()
