@@ -45,7 +45,7 @@ class Player(Drawable):
     def move_down(self, ctx):
         return self._move_direction(ctx, 'down', super().move_down)
 
-    def do_damage(self, ctx, damage):
+    def take_damage(self, ctx, damage):
         self.hp -= damage
 
         if self.hp <= 0:

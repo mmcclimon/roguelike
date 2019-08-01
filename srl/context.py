@@ -12,6 +12,7 @@ class Context:
         self.map = self.screens.map
 
         self._is_running = True
+        self.ticks = 0
 
         self.player = Player()
         self.keymap = Keymap()
@@ -23,13 +24,17 @@ class Context:
         self.create_level()
         self.player.move_to(*self.current_level.way_up.coords())
 
+        self.info_expires_at = None
         self.screens.refresh()
 
     def loop_once(self):
         '''The main run loop.
         Draw all of our screens, wait for input, then do something about it.
         '''
+        self.ticks += 1
+
         # draw
+        self.check_info_expiration()
         self.screens.draw(self, refresh=False)
         self.player.attract_cursor(self)
         self.screens.refresh()
@@ -49,8 +54,14 @@ class Context:
     def debug(self, msg):
         self.screens.debug.write_text(self, msg)
 
-    def info(self, msg):
+    def info(self, msg, expire_after=1):
         self.screens.info.write_text(self, msg)
+        self.info_expires_at = self.ticks + expire_after + 1
+
+    def check_info_expiration(self):
+        if self.info_expires_at == self.ticks:
+            self.screens.info.write_text(self, '')
+            self.info_expires_at = None
 
     def generate_result(self):
         return Result(self)

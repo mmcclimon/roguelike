@@ -17,17 +17,15 @@ class Monster(Drawable):
 
     def fight(self, ctx):
         if random.random() < self.hit_pct:
-            ctx.debug('hit!')
-            ctx.player.do_damage(ctx, self.damage)
+            ctx.info('You were hit by a {}!'.format(self.description))
+            ctx.player.take_damage(ctx, self.damage)
         else:
             self.take_damage(ctx)
 
     # TODO damage depends on player attributes (somehow)
     def take_damage(self, ctx):
         self.hp -= 1
-
         if self.hp <= 0:
-            ctx.debug('gonna die')
             self.die(ctx)
 
     # XXX this is bad
@@ -38,5 +36,5 @@ class Monster(Drawable):
         ctx.current_level.drawables.remove(me)
         self.is_alive = False
 
-        ctx.info('You killed a {}.'.format(self.description))
+        ctx.info('You killed a {}.'.format(self.description), expire_after=2)
 
