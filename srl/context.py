@@ -9,6 +9,7 @@ class Context:
         # draw our windows
         self.screens = ScreenCollection(stdscr)
         self.map = self.screens.map
+        self.info_expires_at = None
 
         self._is_running = True
         self.ticks = 0
@@ -17,14 +18,11 @@ class Context:
         self.keymap = Keymap()
 
         self.levels = []
-        self.level_idx = 0
+        self.level_idx = -1
 
-        # generate the first level
-        self.create_level()
-        self.player.move_to(*self.current_level.way_up.coords())
-
-        self.info_expires_at = None
-        self.screens.refresh()
+        # We begin...
+        self.info('Slowly I turned... step by step...', expire_after=3)
+        self.descend()
 
     def loop_once(self):
         '''The main run loop.
@@ -40,14 +38,9 @@ class Context:
         self.screens.refresh()
 
         # act
-        self.handle_input()
-        self.handle_collisions()
-
-    def handle_input(self):
         k = self.screens.stdscr.getkey()
         self.keymap.handle_key(self, k)
 
-    def handle_collisions(self):
         for thing in self.drawables:
             thing.handle_collisions(self)
 
@@ -80,8 +73,11 @@ class Context:
 
     # Level management code
     # ---------------------
-    def create_level(self):
-        l = Level(self, self.level_idx)
+    def create_level(self, idx):
+        if len(self.levels) > idx:
+            return
+
+        l = Level(self, idx)
         self.levels.append(l)
 
     @property
@@ -89,8 +85,8 @@ class Context:
         return self.levels[ self.level_idx ]
 
     def descend(self):
-        if self.current_level == self.levels[-1]:
-            self.create_level()
+        if self.level_idx < len(self.levels):
+            self.create_level(self.level_idx + 1)
 
         self.level_idx += 1
         self.player.move_to(*self.current_level.way_up.coords())
