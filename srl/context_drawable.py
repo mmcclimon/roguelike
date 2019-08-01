@@ -11,3 +11,6 @@ class ContextDrawable(ABC):
 
     def on_collision(self, ctx):
         pass
+
+    def on_tick(self, ctx):
+        pass

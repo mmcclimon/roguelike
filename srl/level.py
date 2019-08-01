@@ -28,6 +28,10 @@ class Level(ContextDrawable):
         for thing in self.drawables:
             thing.draw(ctx)
 
+    def on_tick(self, ctx):
+        for thing in self.drawables:
+            thing.on_tick(ctx)
+
     def handle_collisions(self, ctx):
         # Take a local copy in case our drawable disappears during iteration
         to_draw = self.drawables.copy()

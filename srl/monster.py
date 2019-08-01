@@ -1,5 +1,5 @@
+import itertools
 import random
-import warnings;
 from srl.drawable import Drawable
 
 class Monster(Drawable):
@@ -10,10 +10,17 @@ class Monster(Drawable):
         self.damage = kwargs['damage']
         self.hit_pct = kwargs['hit_pct']
         self.is_alive = True
+        self.mvmt = itertools.cycle(kwargs.get('movement', ['.']))
 
     def on_collision(self, ctx):
         if self.is_alive:
             self.fight(ctx)
+
+    # we move!
+    def on_tick(self, ctx):
+        direction = next(self.mvmt)
+        if direction != '.':
+            self.try_move(ctx, direction)
 
     def fight(self, ctx):
         if random.random() < self.hit_pct:
@@ -37,4 +44,3 @@ class Monster(Drawable):
         self.is_alive = False
 
         ctx.info('You killed a {}.'.format(self.description), expire_after=2)
-

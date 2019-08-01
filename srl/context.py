@@ -36,6 +36,7 @@ class Context:
         # draw
         self.check_info_expiration()
         self.screens.draw(self, refresh=False)
+        self.current_level.on_tick(self)
         self.player.attract_cursor(self)
         self.screens.refresh()
 

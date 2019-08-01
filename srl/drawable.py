@@ -38,6 +38,10 @@ class Drawable(ContextDrawable):
     def move_down(self, ctx):
         self.move_to(*self.coords_for(Direction.down))
 
+    def try_move(self, ctx, direction):
+        ctx.debug('moving {} to {}'.format(self.description, direction))
+        self.move_to(*self.coords_for(direction))
+
     # return y, x to pass directly to curses
     def coords(self):
         return self.y, self.x

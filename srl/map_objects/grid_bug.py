@@ -7,7 +7,7 @@ class GridBug(Monster):
                 y=y,
                 glyph='X',
                 desc='grid bug',
-                # is_passable=False
+                movement=['up', '.', 'down', '.'],
                 hp=1,
                 damage=1,
                 hit_pct=0.35,
