@@ -31,6 +31,7 @@ class Monster(Drawable):
 
     # TODO damage depends on player attributes (somehow)
     def take_damage(self, ctx):
+        ctx.debug('taking damage')
         self.hp -= 1
         if self.hp <= 0:
             self.die(ctx)

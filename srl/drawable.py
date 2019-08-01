@@ -22,29 +22,37 @@ class Drawable(ContextDrawable):
     @property
     def description(self): return self._desc
 
+    # return y, x to pass directly to curses
+    def coords(self):
+        return self.y, self.x
+
     def move_to(self, y, x):
         self._x = x
         self._y = y
 
-    def move_left(self, ctx):
-        self.move_to(*self.coords_for(Direction.left))
-
-    def move_right(self, ctx):
-        self.move_to(*self.coords_for(Direction.right))
-
-    def move_up(self, ctx):
-        self.move_to(*self.coords_for(Direction.up))
-
-    def move_down(self, ctx):
-        self.move_to(*self.coords_for(Direction.down))
-
     def try_move(self, ctx, direction):
-        ctx.debug('moving {} to {}'.format(self.description, direction))
-        self.move_to(*self.coords_for(direction))
+        y, x = self.coords_for(direction)
+        can_move, what = self.can_move_to(ctx, y, x)
 
-    # return y, x to pass directly to curses
-    def coords(self):
-        return self.y, self.x
+        if can_move:
+            self.move_to(y, x)
+            return (True, None)
+        else:
+            return (False, what)
+
+    # This interface sucks
+    def can_move_to(self, ctx, y, x):
+        if not ctx.map.contains(y,x):
+            return (False, 'wall')
+
+        thing = ctx.current_level.thing_at(y, x)
+        if not thing:
+            return (True, None)
+
+        if thing.is_passable:
+            return (True, None)
+
+        return (False, thing.description)
 
     def draw(self, ctx):
         self._last_y, self._last_x = self.coords()
