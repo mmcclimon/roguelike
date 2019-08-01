@@ -2,8 +2,7 @@ import curses
 from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
-from srl.result  import Result
-from srl.screen_collection import ScreenCollection
+from srl.screens import ScreenCollection
 
 class Context:
     def __init__(self, stdscr):
@@ -106,3 +105,18 @@ class Context:
         self.player.move_to(*self.current_level.way_down.coords())
         self.map.clear()
 
+
+# Eventually this will encapsulate how the game turned out.
+class Result:
+    def __init__(self, ctx):
+        self.ctx = ctx
+
+    def print(self):
+        if self.ctx.level_idx < 0:
+            print('You won!')
+            return
+
+        if self.ctx.player.is_alive:
+            print('You quit, like a coward')
+        else:
+            print('You died. :(')

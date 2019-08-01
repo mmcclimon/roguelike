@@ -1,5 +1,26 @@
-from srl.context_drawable import ContextDrawable
-from srl.util import Direction
+from abc import ABC, abstractmethod
+import enum
+
+class Direction(enum.Enum):
+    left  = enum.auto()
+    right = enum.auto()
+    up    = enum.auto()
+    down  = enum.auto()
+
+class ContextDrawable(ABC):
+    @abstractmethod
+    def draw(self, ctx):
+        pass
+
+    @abstractmethod
+    def handle_collisions(self, ctx):
+        pass
+
+    def on_collision(self, ctx):
+        pass
+
+    def on_tick(self, ctx):
+        pass
 
 class Drawable(ContextDrawable):
     def __init__(self, desc='', is_passable=True, **kwargs):

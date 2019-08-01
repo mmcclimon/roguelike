@@ -1,4 +1,4 @@
-from srl.context_drawable import ContextDrawable
+from srl.drawable import ContextDrawable
 from srl.map_objects import StairsDown, StairsUp, Boulder, GridBug
 
 class Level(ContextDrawable):

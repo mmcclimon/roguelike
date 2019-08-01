@@ -2,6 +2,45 @@ import itertools
 import random
 from srl.drawable import Drawable
 
+# Objects
+
+class StairsDown(Drawable):
+    def __init__(self, x=0, y=0):
+        super().__init__(
+                x=x,
+                y=y,
+                glyph='>',
+                desc='a ladder down',
+                )
+
+    def on_collision(self, ctx):
+        ctx.descend()
+
+class StairsUp(Drawable):
+    def __init__(self, x=0, y=0):
+        super().__init__(
+                x=x,
+                y=y,
+                glyph='<',
+                desc='a ladder down',
+                )
+
+    def on_collision(self, ctx):
+        ctx.ascend()
+
+
+
+class Boulder(Drawable):
+    def __init__(self, x=0, y=0):
+        super().__init__(
+                x=x,
+                y=y,
+                glyph='`',
+                desc='boulder',
+                is_passable=False
+                )
+
+# Monsters
 class Monster(Drawable):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -43,3 +82,18 @@ class Monster(Drawable):
         self.is_alive = False
 
         ctx.info('You killed a {}.'.format(self.description), expire_after=2)
+
+
+class GridBug(Monster):
+    def __init__(self, x=0, y=0):
+        super().__init__(
+                x=x,
+                y=y,
+                glyph='X',
+                desc='grid bug',
+                movement=['up', '.', 'down', '.'],
+                hp=1,
+                damage=1,
+                hit_pct=0.35,
+                )
+
