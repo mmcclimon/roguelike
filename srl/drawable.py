@@ -51,7 +51,15 @@ class Drawable(ContextDrawable):
             ctx.debug('zomg, a collision with {}'.format(self.glyph))
             self.on_collision(ctx)
 
+    # direction is maybe a string, or maybe an enum
     def coords_for(self, direction):
+        """Return the y, x coordinates for a cell next to this one.
+        You can pass a string, *left*, *right*, *up*, *down*, or an instance
+        of the Direction enum"""
+
+        if type(direction) == str:
+            direction = Direction[direction]
+
         if direction == Direction.left:
             return self.y, self.x - 1
 

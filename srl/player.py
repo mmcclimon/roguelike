@@ -1,5 +1,4 @@
 from srl.drawable import Drawable
-from srl.util import Direction
 
 class Player(Drawable):
     def __init__(self, x=0, y=0, hp=10):
@@ -16,22 +15,23 @@ class Player(Drawable):
 
     def can_move_to(self, ctx, y, x):
         if not ctx.map.contains(y,x):
-            return False
+            return (False, 'wall')
 
         thing = ctx.current_level.thing_at(y, x)
         if not thing:
-            return True
+            return (True, None)
 
         if thing.is_passable:
-            return True
+            return (True, None)
 
-        return False
+        return (False, thing.description)
 
     def _move_direction(self, ctx, dir_str, func):
-        if self.can_move_to(ctx, *self.coords_for(Direction[dir_str])):
+        can_move, what = self.can_move_to(ctx, *self.coords_for(dir_str))
+        if can_move:
             func(ctx)
         else:
-            ctx.debug('cannot move {}!'.format(dir_str))
+            ctx.info('Your progress is blocked by a {}.'.format(what))
 
     def move_left(self, ctx):
         return self._move_direction(ctx, 'left', super().move_left)
