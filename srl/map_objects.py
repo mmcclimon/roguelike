@@ -10,7 +10,7 @@ class StairsDown(Drawable):
                 x=x,
                 y=y,
                 glyph='>',
-                desc='a ladder down',
+                description='a ladder down',
                 )
 
     def on_collision(self, ctx):
@@ -22,7 +22,7 @@ class StairsUp(Drawable):
                 x=x,
                 y=y,
                 glyph='<',
-                desc='a ladder down',
+                description='a ladder down',
                 )
 
     def on_collision(self, ctx):
@@ -36,13 +36,14 @@ class Boulder(Drawable):
                 x=x,
                 y=y,
                 glyph='`',
-                desc='boulder',
+                description='boulder',
                 is_passable=False
                 )
 
 # Monsters
 class Monster(Drawable):
     def __init__(self, **kwargs):
+        kwargs['glyph'] = kwargs.get('glyph', 'X')
         super().__init__(**kwargs)
 
         self.hp = kwargs['hp']
@@ -90,7 +91,7 @@ class GridBug(Monster):
                 x=x,
                 y=y,
                 glyph='X',
-                desc='grid bug',
+                description='grid bug',
                 movement=['up', '.', 'down', '.'],
                 hp=1,
                 damage=1,

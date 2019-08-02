@@ -23,13 +23,13 @@ class ContextDrawable(ABC):
         pass
 
 class Drawable(ContextDrawable):
-    def __init__(self, desc='', is_passable=True, **kwargs):
-        self._x = kwargs['x']
-        self._y = kwargs['y']
+    def __init__(self, **kwargs):
+        self._x = kwargs.get('x', -1)
+        self._y = kwargs.get('y', -1)
         self.glyph = kwargs['glyph']
 
-        self._desc  = desc
-        self.is_passable = is_passable
+        self.description = kwargs.get('description', '')
+        self.is_passable = kwargs.get('is_passable', True)
 
         self._last_x = self.x
         self._last_y = self.y
@@ -39,9 +39,6 @@ class Drawable(ContextDrawable):
 
     @property
     def y(self): return self._y
-
-    @property
-    def description(self): return self._desc
 
     # return y, x to pass directly to curses
     def coords(self):

@@ -13,13 +13,13 @@ class Level(ContextDrawable):
 
     def generate(self, ctx):
         # make a level-down and a level-up
-        self.way_down = self.place_randomly(ctx, StairsDown)
-        self.way_up   = self.place_randomly(ctx, StairsUp)
+        self.way_down = self.place_randomly(ctx, StairsDown())
+        self.way_up   = self.place_randomly(ctx, StairsUp())
 
         for i in range(3):
-            self.place_randomly(ctx, Boulder)
+            self.place_randomly(ctx, Boulder())
 
-        self.place_randomly(ctx, GridBug)
+        self.place_randomly(ctx, GridBug())
 
     def draw(self, ctx):
         for thing in self.drawables:
@@ -35,12 +35,12 @@ class Level(ContextDrawable):
         for thing in to_draw:
             thing.handle_collisions(ctx)
 
-    def place_randomly(self, ctx, cls):
+    def place_randomly(self, ctx, thing):
         y, x = ctx.map.random_coords()
         while self.has_thing_at(y, x):
             y, x = ctx.map.random_coords()
 
-        thing = cls(x=x, y=y)
+        thing.move_to(y, x)
         self.drawables.add(thing)
         return thing
 
