@@ -83,18 +83,3 @@ class Monster(Drawable):
         self.is_alive = False
 
         ctx.info('You killed a {}.'.format(self.description), expire_after=2)
-
-
-class GridBug(Monster):
-    def __init__(self, x=0, y=0):
-        super().__init__(
-                x=x,
-                y=y,
-                glyph='X',
-                description='grid bug',
-                movement=['up', '.', 'down', '.'],
-                hp=1,
-                damage=1,
-                hit_pct=0.35,
-                )
-

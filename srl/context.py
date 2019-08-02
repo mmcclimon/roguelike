@@ -3,6 +3,7 @@ from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
 from srl.screens import ScreenCollection
+from srl.config import MonsterCollection
 
 class Context:
     def __init__(self, stdscr):
@@ -16,6 +17,8 @@ class Context:
 
         self.player = Player()
         self.keymap = Keymap()
+
+        self.monster_collection = MonsterCollection('monsters.toml')
 
         self.levels = []
         self.level_idx = -1
