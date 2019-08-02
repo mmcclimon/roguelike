@@ -19,7 +19,8 @@ class Level(ContextDrawable):
         for i in range(3):
             self.place_randomly(ctx, Boulder())
 
-        self.place_randomly(ctx, GridBug())
+        g = ctx.monster_collection.random_monster()
+        self.place_randomly(ctx, g)
 
     def draw(self, ctx):
         for thing in self.drawables:

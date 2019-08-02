@@ -1,0 +1,8 @@
+[gridbug]
+description = 'grid bug'
+hp          = 1
+damage      = 1
+glyph       = 'X'
+desc        = 'grid bug'
+movement    = ['up', '.', 'down', '.']
+hit_pct     = 0.35
