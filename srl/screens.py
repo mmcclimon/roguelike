@@ -1,21 +1,9 @@
 import curses
 import random
-
-# I suspect that there is a better way to do this, but this kinda sorta works
-# as long as _something_ calls set_up() after curses is loaded
-class Palette():
-    @classmethod
-    def set_up(cls):
-        curses.init_pair(1, curses.COLOR_RED, 0)
-        curses.init_pair(2, curses.COLOR_YELLOW, 0)
-
-        Palette.red = curses.color_pair(1)
-        Palette.yellow = curses.color_pair(2)
+from srl.drawable import Palette
 
 class ScreenCollection:
     def __init__(self, stdscr):
-        Palette.set_up()    # as early as is feasible
-
         self.stdscr = stdscr
         self.stdscr.clear()
 

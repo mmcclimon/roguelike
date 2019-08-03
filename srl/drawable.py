@@ -103,3 +103,33 @@ class Drawable(ContextDrawable):
             return self.y + 1, self.x
 
         raise ValueError("unknown direction {}".format(direction))
+
+
+# curses.init_pair() must be done _after_ curses.initscr() is called, which
+# means that we can't just run it when the class evaluates. I also want to
+# call these things as class methods, which means that we need to define them
+# as properties on the metaclass. See https://stackoverflow.com/a/15226813.
+class MetaPalette(type):
+    def _color_pair(cls, color):
+        if getattr(cls, '_color_pairs', None) is None:
+            import curses
+            cls._color_pairs = {}
+
+            curses.init_pair(1, curses.COLOR_RED, 0)
+            cls._color_pairs['red'] = curses.color_pair(1)
+
+            curses.init_pair(2, curses.COLOR_YELLOW, 0)
+            cls._color_pairs['yellow'] = curses.color_pair(2)
+
+        return cls._color_pairs[color]
+
+    @property
+    def red(cls): return cls._color_pair('red')
+
+    @property
+    def yellow(cls): return cls._color_pair('yellow')
+
+# with this metaclass, Palette.red just calls MetaPalette.red(), which will
+# lazy-load the colors into curses and do what we want!
+class Palette(metaclass=MetaPalette):
+    pass
