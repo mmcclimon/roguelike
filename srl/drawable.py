@@ -1,6 +1,8 @@
-from abc import ABC, abstractmethod
 import enum
 import itertools
+import logging
+
+from abc import ABC, abstractmethod
 
 class Direction(enum.Enum):
     left  = enum.auto()
@@ -147,7 +149,7 @@ class MetaPalette(type):
         try:
             return cls._color_pair(color)
         except KeyError:
-            # XXX log
+            logging.warning('missing color %s', color)
             return cls._color_pair('normal')
 
 # with this metaclass, Palette will just lazy-load the colors into curses and

@@ -1,3 +1,4 @@
+import logging
 import random
 import toml
 
@@ -15,4 +16,6 @@ class MonsterCollection:
 
     def random_monster(self):
         tmpl = self.templates.get(random.choice(self.keys))
-        return Monster(**tmpl)
+        m = Monster(**tmpl)
+        logging.debug('created monster: %s', m.description)
+        return m

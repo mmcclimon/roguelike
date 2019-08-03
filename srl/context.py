@@ -1,4 +1,6 @@
 import curses
+import logging
+
 from srl.player import Player
 from srl.keymap import Keymap
 from srl.level  import Level
@@ -48,6 +50,7 @@ class Context:
             thing.handle_collisions(self)
 
     def debug(self, msg):
+        logging.debug(msg)
         self.screens.debug.write_text(self, msg)
 
     def info(self, msg, expire_after=1):

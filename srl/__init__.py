@@ -1,6 +1,15 @@
 # __init__.py file for srl
 import curses
+import logging
 import srl.context
+
+logging.basicConfig(
+    filename='srl.log',
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%Y-%m-%dT%H:%M:%S',
+    level=logging.DEBUG,
+)
+
 
 def run():
     try:
