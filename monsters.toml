@@ -1,8 +1,3586 @@
-[gridbug]
+[acid_blob]
+description = 'acid blob'
+glyph       = 'b'
+level       = 1
+difficulty  = 2
+move        = 3
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'green'
+
+[air_elemental]
+description = 'air elemental'
+glyph       = 'E'
+level       = 8
+difficulty  = 10
+move        = 36
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'cyan'
+
+[aleax]
+description = 'Aleax'
+glyph       = 'A'
+level       = 10
+difficulty  = 12
+move        = 8
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'yellow'
+
+[aligned_priest]
+description = 'aligned priest'
+glyph       = '@'
+level       = 12
+difficulty  = 15
+move        = 12
+ac          = 10
+atk_dcount  = 4
+atk_dtype   = 10
+color       = 'white'
+
+[angel]
+description = 'Angel'
+glyph       = 'A'
+level       = 14
+difficulty  = 19
+move        = 10
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'white'
+
+[ape]
+description = 'ape'
+glyph       = 'Y'
+level       = 4
+difficulty  = 6
+move        = 12
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'brown'
+
+[arch_lich]
+description = 'arch-lich'
+glyph       = 'L'
+level       = 25
+difficulty  = 29
+move        = 9
+ac          = 6
+atk_dcount  = 5
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[archon]
+description = 'Archon'
+glyph       = 'A'
+level       = 19
+difficulty  = 26
+move        = 16
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_lord'
+
+[asmodeus]
+description = 'Asmodeus'
+glyph       = '&'
+level       = 105
+difficulty  = 53
+move        = 12
+ac          = 7
+atk_dcount  = 4
+atk_dtype   = 4
+color       = 'hi_lord'
+
+[baalzebub]
+description = 'Baalzebub'
+glyph       = '&'
+level       = 89
+difficulty  = 45
+move        = 9
+ac          = 5
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[baby_black_dragon]
+description = 'baby black dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'black'
+
+[baby_blue_dragon]
+description = 'baby blue dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'blue'
+
+[baby_crocodile]
+description = 'baby crocodile'
+glyph       = ':'
+level       = 3
+difficulty  = 4
+move        = 6
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[baby_gray_dragon]
+description = 'baby gray dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'gray'
+
+[baby_green_dragon]
+description = 'baby green dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'green'
+
+[baby_long_worm]
+description = 'baby long worm'
+glyph       = 'w'
+level       = 5
+difficulty  = 6
+move        = 3
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[baby_orange_dragon]
+description = 'baby orange dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'orange'
+
+[baby_purple_worm]
+description = 'baby purple worm'
+glyph       = 'w'
+level       = 8
+difficulty  = 9
+move        = 3
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'magenta'
+
+[baby_red_dragon]
+description = 'baby red dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[baby_silver_dragon]
+description = 'baby silver dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'dragon_silver'
+
+[baby_white_dragon]
+description = 'baby white dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'white'
+
+[baby_yellow_dragon]
+description = 'baby yellow dragon'
+glyph       = 'D'
+level       = 12
+difficulty  = 13
+move        = 9
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'yellow'
+
+[balrog]
+description = 'balrog'
+glyph       = '&'
+level       = 16
+difficulty  = 20
+move        = 5
+ac          = 2
+atk_dcount  = 8
+atk_dtype   = 4
+color       = 'red'
+
+[baluchitherium]
+description = 'baluchitherium'
+glyph       = 'q'
+level       = 14
+difficulty  = 15
+move        = 12
+ac          = 5
+atk_dcount  = 5
+atk_dtype   = 4
+color       = 'gray'
+
+[barbed_devil]
+description = 'barbed devil'
+glyph       = '&'
+level       = 8
+difficulty  = 10
+move        = 12
+ac          = 0
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[barrow_wight]
+description = 'barrow wight'
+glyph       = 'W'
+level       = 3
+difficulty  = 7
+move        = 12
+ac          = 5
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'gray'
+
+[bat]
+description = 'bat'
+glyph       = 'B'
+level       = 0
+difficulty  = 2
+move        = 22
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[black_dragon]
+description = 'black dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 1
+atk_dtype   = 255
+color       = 'black'
+
+[black_light]
+description = 'black light'
+glyph       = 'y'
+level       = 5
+difficulty  = 7
+move        = 15
+ac          = 0
+atk_dcount  = 10
+atk_dtype   = 12
+color       = 'black'
+
+[black_naga]
+description = 'black naga'
+glyph       = 'N'
+level       = 8
+difficulty  = 10
+move        = 14
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'black'
+
+[black_naga_hatchling]
+description = 'black naga hatchling'
+glyph       = 'N'
+level       = 3
+difficulty  = 4
+move        = 10
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'black'
+
+[black_pudding]
+description = 'black pudding'
+glyph       = 'P'
+level       = 10
+difficulty  = 12
+move        = 6
+ac          = 6
+atk_dcount  = 3
+atk_dtype   = 8
+color       = 'black'
+
+[black_unicorn]
+description = 'black unicorn'
+glyph       = 'u'
+level       = 4
+difficulty  = 6
+move        = 24
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 12
+color       = 'black'
+
+[blue_dragon]
+description = 'blue dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'blue'
+
+[blue_jelly]
+description = 'blue jelly'
+glyph       = 'j'
+level       = 4
+difficulty  = 5
+move        = 0
+ac          = 8
+atk_dcount  = 0
+atk_dtype   = 6
+color       = 'blue'
+
+[bone_devil]
+description = 'bone devil'
+glyph       = '&'
+level       = 9
+difficulty  = 13
+move        = 15
+ac          = 1
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'gray'
+
+[brown_mold]
+description = 'brown mold'
+glyph       = 'F'
+level       = 1
+difficulty  = 2
+move        = 0
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 6
+color       = 'brown'
+
+[brown_pudding]
+description = 'brown pudding'
+glyph       = 'P'
+level       = 5
+difficulty  = 6
+move        = 3
+ac          = 8
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'brown'
+
+[bugbear]
+description = 'bugbear'
+glyph       = 'h'
+level       = 3
+difficulty  = 5
+move        = 9
+ac          = 5
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'brown'
+
+[captain]
+description = 'captain'
+glyph       = '@'
+level       = 12
+difficulty  = 14
+move        = 10
+ac          = 10
+atk_dcount  = 4
+atk_dtype   = 4
+color       = 'blue'
+
+[carnivorous_ape]
+description = 'carnivorous ape'
+glyph       = 'Y'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'black'
+
+[cave_spider]
+description = 'cave spider'
+glyph       = 's'
+level       = 1
+difficulty  = 3
+move        = 12
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'gray'
+
+[centipede]
+description = 'centipede'
+glyph       = 's'
+level       = 2
+difficulty  = 4
+move        = 4
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'yellow'
+
+[cerberus]
+description = 'Cerberus'
+glyph       = 'd'
+level       = 12
+difficulty  = 14
+move        = 10
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'red'
+
+[chameleon]
+description = 'chameleon'
+glyph       = ':'
+level       = 6
+difficulty  = 7
+move        = 5
+ac          = 6
+atk_dcount  = 4
+atk_dtype   = 2
+color       = 'brown'
+
+[charon]
+description = 'Charon'
+glyph       = '@'
+level       = 76
+difficulty  = 38
+move        = 18
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'white'
+
+[chickatrice]
+description = 'chickatrice'
+glyph       = 'c'
+level       = 4
+difficulty  = 7
+move        = 4
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'brown'
+
+[clay_golem]
+description = 'clay golem'
+glyph       = '''
+level       = 11
+difficulty  = 12
+move        = 7
+ac          = 7
+atk_dcount  = 3
+atk_dtype   = 10
+color       = 'brown'
+
+[cobra]
+description = 'cobra'
+glyph       = 'S'
+level       = 6
+difficulty  = 10
+move        = 18
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'blue'
+
+[cockatrice]
+description = 'cockatrice'
+glyph       = 'c'
+level       = 5
+difficulty  = 8
+move        = 6
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'yellow'
+
+[couatl]
+description = 'couatl'
+glyph       = 'A'
+level       = 8
+difficulty  = 11
+move        = 10
+ac          = 5
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'green'
+
+[coyote]
+description = 'coyote'
+glyph       = 'd'
+level       = 1
+difficulty  = 2
+move        = 12
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[crocodile]
+description = 'crocodile'
+glyph       = ':'
+level       = 6
+difficulty  = 7
+move        = 9
+ac          = 5
+atk_dcount  = 4
+atk_dtype   = 2
+color       = 'brown'
+
+[croesus]
+description = 'Croesus'
+glyph       = '@'
+level       = 20
+difficulty  = 22
+move        = 15
+ac          = 0
+atk_dcount  = 4
+atk_dtype   = 10
+color       = 'hi_lord'
+
+[death]
+description = 'Death'
+glyph       = '&'
+level       = 30
+difficulty  = 34
+move        = 12
+ac          = 5
+atk_dcount  = 8
+atk_dtype   = 8
+color       = 'hi_lord'
+
+[demilich]
+description = 'demilich'
+glyph       = 'L'
+level       = 14
+difficulty  = 18
+move        = 9
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'red'
+
+[demogorgon]
+description = 'Demogorgon'
+glyph       = '&'
+level       = 106
+difficulty  = 57
+move        = 15
+ac          = 8
+atk_dcount  = 8
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[dingo]
+description = 'dingo'
+glyph       = 'd'
+level       = 4
+difficulty  = 5
+move        = 16
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'yellow'
+
+[disenchanter]
+description = 'disenchanter'
+glyph       = 'R'
+level       = 12
+difficulty  = 14
+move        = 12
+ac          = 10
+atk_dcount  = 4
+atk_dtype   = 4
+color       = 'blue'
+
+[dispater]
+description = 'Dispater'
+glyph       = '&'
+level       = 78
+difficulty  = 40
+move        = 15
+ac          = 2
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[djinni]
+description = 'djinni'
+glyph       = '&'
+level       = 7
+difficulty  = 8
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'yellow'
+
+[dog]
+description = 'dog'
+glyph       = 'd'
+level       = 4
+difficulty  = 5
+move        = 16
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[doppelganger]
+description = 'doppelganger'
+glyph       = '@'
+level       = 9
+difficulty  = 11
+move        = 12
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 12
+color       = 'hi_domestic'
+
+[dust_vortex]
+description = 'dust vortex'
+glyph       = 'v'
+level       = 4
+difficulty  = 6
+move        = 20
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'brown'
+
+[dwarf]
+description = 'dwarf'
+glyph       = 'h'
+level       = 2
+difficulty  = 4
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'red'
+
+[dwarf_king]
+description = 'dwarf king'
+glyph       = 'h'
+level       = 6
+difficulty  = 8
+move        = 6
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[dwarf_lord]
+description = 'dwarf lord'
+glyph       = 'h'
+level       = 4
+difficulty  = 6
+move        = 6
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'blue'
+
+[dwarf_mummy]
+description = 'dwarf mummy'
+glyph       = 'M'
+level       = 5
+difficulty  = 6
+move        = 10
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[dwarf_zombie]
+description = 'dwarf zombie'
+glyph       = 'Z'
+level       = 2
+difficulty  = 3
+move        = 6
+ac          = 9
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[earth_elemental]
+description = 'earth elemental'
+glyph       = 'E'
+level       = 8
+difficulty  = 10
+move        = 6
+ac          = 2
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'brown'
+
+[electric_eel]
+description = 'electric eel'
+glyph       = ';'
+level       = 7
+difficulty  = 10
+move        = 10
+ac          = 3
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'bright_blue'
+
+[elf]
+description = 'elf'
+glyph       = '@'
+level       = 10
+difficulty  = 12
+move        = 12
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'hi_domestic'
+
+[elf_lord]
+description = 'elf-lord'
+glyph       = '@'
+level       = 8
+difficulty  = 11
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'bright_blue'
+
+[elf_mummy]
+description = 'elf mummy'
+glyph       = 'M'
+level       = 6
+difficulty  = 7
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'green'
+
+[elf_zombie]
+description = 'elf zombie'
+glyph       = 'Z'
+level       = 3
+difficulty  = 4
+move        = 6
+ac          = 9
+atk_dcount  = 1
+atk_dtype   = 7
+color       = 'green'
+
+[elvenking]
+description = 'Elvenking'
+glyph       = '@'
+level       = 9
+difficulty  = 11
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_lord'
+
+[energy_vortex]
+description = 'energy vortex'
+glyph       = 'v'
+level       = 6
+difficulty  = 9
+move        = 20
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_zap'
+
+[erinys]
+description = 'erinys'
+glyph       = '&'
+level       = 7
+difficulty  = 10
+move        = 12
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[ettin]
+description = 'ettin'
+glyph       = 'H'
+level       = 10
+difficulty  = 13
+move        = 12
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'brown'
+
+[ettin_mummy]
+description = 'ettin mummy'
+glyph       = 'M'
+level       = 7
+difficulty  = 8
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'blue'
+
+[ettin_zombie]
+description = 'ettin zombie'
+glyph       = 'Z'
+level       = 6
+difficulty  = 7
+move        = 8
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'blue'
+
+[famine]
+description = 'Famine'
+glyph       = '&'
+level       = 30
+difficulty  = 34
+move        = 12
+ac          = 5
+atk_dcount  = 8
+atk_dtype   = 8
+color       = 'hi_lord'
+
+[fire_ant]
+description = 'fire ant'
+glyph       = 'a'
+level       = 3
+difficulty  = 6
+move        = 18
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[fire_elemental]
+description = 'fire elemental'
+glyph       = 'E'
+level       = 8
+difficulty  = 10
+move        = 12
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'yellow'
+
+[fire_giant]
+description = 'fire giant'
+glyph       = 'H'
+level       = 9
+difficulty  = 11
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 10
+color       = 'yellow'
+
+[fire_vortex]
+description = 'fire vortex'
+glyph       = 'v'
+level       = 8
+difficulty  = 10
+move        = 22
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'yellow'
+
+[flaming_sphere]
+description = 'flaming sphere'
+glyph       = 'e'
+level       = 6
+difficulty  = 8
+move        = 13
+ac          = 4
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'red'
+
+[flesh_golem]
+description = 'flesh golem'
+glyph       = '''
+level       = 9
+difficulty  = 10
+move        = 8
+ac          = 9
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'red'
+
+[floating_eye]
+description = 'floating eye'
+glyph       = 'e'
+level       = 2
+difficulty  = 3
+move        = 1
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 70
+color       = 'blue'
+
+[fog_cloud]
+description = 'fog cloud'
+glyph       = 'v'
+level       = 3
+difficulty  = 4
+move        = 1
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'gray'
+
+[forest_centaur]
+description = 'forest centaur'
+glyph       = 'C'
+level       = 5
+difficulty  = 8
+move        = 18
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'green'
+
+[fox]
+description = 'fox'
+glyph       = 'd'
+level       = 0
+difficulty  = 1
+move        = 15
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'red'
+
+[freezing_sphere]
+description = 'freezing sphere'
+glyph       = 'e'
+level       = 6
+difficulty  = 8
+move        = 13
+ac          = 4
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'white'
+
+[frost_giant]
+description = 'frost giant'
+glyph       = 'H'
+level       = 10
+difficulty  = 13
+move        = 12
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 12
+color       = 'white'
+
+[gargoyle]
+description = 'gargoyle'
+glyph       = 'g'
+level       = 6
+difficulty  = 8
+move        = 10
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'brown'
+
+[garter_snake]
+description = 'garter snake'
+glyph       = 'S'
+level       = 1
+difficulty  = 3
+move        = 8
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'green'
+
+[gas_spore]
+description = 'gas spore'
+glyph       = 'e'
+level       = 1
+difficulty  = 2
+move        = 3
+ac          = 10
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'gray'
+
+[gecko]
+description = 'gecko'
+glyph       = ':'
+level       = 1
+difficulty  = 2
+move        = 6
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'green'
+
+[gelatinous_cube]
+description = 'gelatinous cube'
+glyph       = 'b'
+level       = 6
+difficulty  = 8
+move        = 6
+ac          = 8
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'cyan'
+
+[geryon]
+description = 'Geryon'
+glyph       = '&'
+level       = 72
+difficulty  = 36
+move        = 3
+ac          = 3
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[ghost]
+description = 'ghost'
+glyph       = ' '
+level       = 10
+difficulty  = 12
+move        = 3
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 1
+color       = 'gray'
+
+[ghoul]
+description = 'ghoul'
+glyph       = 'Z'
+level       = 3
+difficulty  = 5
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'black'
+
+[giant]
+description = 'giant'
+glyph       = 'H'
+level       = 6
+difficulty  = 8
+move        = 6
+ac          = 0
+atk_dcount  = 2
+atk_dtype   = 10
+color       = 'red'
+
+[giant_ant]
+description = 'giant ant'
+glyph       = 'a'
+level       = 2
+difficulty  = 4
+move        = 18
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[giant_bat]
+description = 'giant bat'
+glyph       = 'B'
+level       = 2
+difficulty  = 3
+move        = 22
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[giant_beetle]
+description = 'giant beetle'
+glyph       = 'a'
+level       = 5
+difficulty  = 6
+move        = 6
+ac          = 4
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'black'
+
+[giant_eel]
+description = 'giant eel'
+glyph       = ';'
+level       = 5
+difficulty  = 7
+move        = 9
+ac          = 1
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'cyan'
+
+[giant_mimic]
+description = 'giant mimic'
+glyph       = 'm'
+level       = 9
+difficulty  = 11
+move        = 3
+ac          = 7
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[giant_mummy]
+description = 'giant mummy'
+glyph       = 'M'
+level       = 8
+difficulty  = 10
+move        = 14
+ac          = 3
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'cyan'
+
+[giant_rat]
+description = 'giant rat'
+glyph       = 'r'
+level       = 1
+difficulty  = 2
+move        = 10
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'brown'
+
+[giant_spider]
+description = 'giant spider'
+glyph       = 's'
+level       = 5
+difficulty  = 7
+move        = 15
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'magenta'
+
+[giant_zombie]
+description = 'giant zombie'
+glyph       = 'Z'
+level       = 8
+difficulty  = 9
+move        = 8
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'cyan'
+
+[glass_golem]
+description = 'glass golem'
+glyph       = '''
+level       = 16
+difficulty  = 18
+move        = 6
+ac          = 1
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'cyan'
+
+[glass_piercer]
+description = 'glass piercer'
+glyph       = 'p'
+level       = 7
+difficulty  = 9
+move        = 1
+ac          = 0
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'white'
+
+[gnome]
+description = 'gnome'
+glyph       = 'G'
+level       = 1
+difficulty  = 3
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[gnome_king]
+description = 'gnome king'
+glyph       = 'G'
+level       = 5
+difficulty  = 6
+move        = 10
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[gnome_lord]
+description = 'gnome lord'
+glyph       = 'G'
+level       = 3
+difficulty  = 4
+move        = 8
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'blue'
+
+[gnome_mummy]
+description = 'gnome mummy'
+glyph       = 'M'
+level       = 4
+difficulty  = 5
+move        = 10
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[gnome_zombie]
+description = 'gnome zombie'
+glyph       = 'Z'
+level       = 1
+difficulty  = 2
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 5
+color       = 'brown'
+
+[gnomish_wizard]
+description = 'gnomish wizard'
+glyph       = 'G'
+level       = 3
+difficulty  = 5
+move        = 10
+ac          = 4
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'hi_zap'
+
+[goblin]
+description = 'goblin'
+glyph       = 'o'
+level       = 0
+difficulty  = 1
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'gray'
+
+[gold_golem]
+description = 'gold golem'
+glyph       = '''
+level       = 5
+difficulty  = 6
+move        = 9
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 3
+color       = 'hi_gold'
+
+[golden_naga]
+description = 'golden naga'
+glyph       = 'N'
+level       = 10
+difficulty  = 13
+move        = 14
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'hi_gold'
+
+[golden_naga_hatchling]
+description = 'golden naga hatchling'
+glyph       = 'N'
+level       = 3
+difficulty  = 4
+move        = 10
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'hi_gold'
+
+[gray_dragon]
+description = 'gray dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'gray'
+
+[gray_ooze]
+description = 'gray ooze'
+glyph       = 'P'
+level       = 3
+difficulty  = 4
+move        = 1
+ac          = 8
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'gray'
+
+[gray_unicorn]
+description = 'gray unicorn'
+glyph       = 'u'
+level       = 4
+difficulty  = 6
+move        = 24
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 12
+color       = 'gray'
+
+[green_dragon]
+description = 'green dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'green'
+
+[green_elf]
+description = 'Green-elf'
+glyph       = '@'
+level       = 5
+difficulty  = 7
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'bright_green'
+
+[green_mold]
+description = 'green mold'
+glyph       = 'F'
+level       = 1
+difficulty  = 2
+move        = 0
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 4
+color       = 'green'
+
+[green_slime]
+description = 'green slime'
+glyph       = 'P'
+level       = 6
+difficulty  = 8
+move        = 6
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'green'
+
+[gremlin]
+description = 'gremlin'
+glyph       = 'g'
+level       = 5
+difficulty  = 8
+move        = 12
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'green'
+
+[grey_elf]
+description = 'Grey-elf'
+glyph       = '@'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'gray'
+
+[grid_bug]
 description = 'grid bug'
-hp          = 1
-damage      = 1
+glyph       = 'x'
+level       = 0
+difficulty  = 1
+move        = 12
+ac          = 9
+atk_dcount  = 1
+atk_dtype   = 1
+color       = 'magenta'
+
+[guard]
+description = 'guard'
+glyph       = '@'
+level       = 12
+difficulty  = 14
+move        = 12
+ac          = 10
+atk_dcount  = 4
+atk_dtype   = 10
+color       = 'blue'
+
+[guardian_naga]
+description = 'guardian naga'
+glyph       = 'N'
+level       = 12
+difficulty  = 16
+move        = 16
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'green'
+
+[guardian_naga_hatchling]
+description = 'guardian naga hatchling'
+glyph       = 'N'
+level       = 3
+difficulty  = 4
+move        = 10
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'green'
+
+[hell_hound]
+description = 'hell hound'
+glyph       = 'd'
+level       = 12
+difficulty  = 14
+move        = 14
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'red'
+
+[hell_hound_pup]
+description = 'hell hound pup'
+glyph       = 'd'
+level       = 7
+difficulty  = 9
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[hezrou]
+description = 'hezrou'
+glyph       = '&'
+level       = 9
+difficulty  = 12
+move        = 6
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'red'
+
+[high_priest]
+description = 'high priest'
+glyph       = '@'
+level       = 25
+difficulty  = 30
+move        = 15
+ac          = 7
+atk_dcount  = 4
+atk_dtype   = 10
+color       = 'white'
+
+[hill_giant]
+description = 'hill giant'
+glyph       = 'H'
+level       = 8
+difficulty  = 10
+move        = 10
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'cyan'
+
+[hill_orc]
+description = 'hill orc'
+glyph       = 'o'
+level       = 2
+difficulty  = 4
+move        = 9
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'yellow'
+
+[hobbit]
+description = 'hobbit'
+glyph       = 'h'
+level       = 1
+difficulty  = 2
+move        = 9
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'green'
+
+[hobgoblin]
+description = 'hobgoblin'
+glyph       = 'o'
+level       = 1
+difficulty  = 3
+move        = 9
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[homunculus]
+description = 'homunculus'
+glyph       = 'i'
+level       = 2
+difficulty  = 3
+move        = 12
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'green'
+
+[horned_devil]
+description = 'horned devil'
+glyph       = '&'
+level       = 6
+difficulty  = 9
+move        = 9
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[horse]
+description = 'horse'
+glyph       = 'u'
+level       = 5
+difficulty  = 7
+move        = 20
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'brown'
+
+[housecat]
+description = 'housecat'
+glyph       = 'f'
+level       = 4
+difficulty  = 5
+move        = 16
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[human]
+description = 'human'
+glyph       = '@'
+level       = 0
+difficulty  = 2
+move        = 12
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[human_mummy]
+description = 'human mummy'
+glyph       = 'M'
+level       = 6
+difficulty  = 7
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'gray'
+
+[human_zombie]
+description = 'human zombie'
+glyph       = 'Z'
+level       = 4
+difficulty  = 5
+move        = 6
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'hi_domestic'
+
+[ice_devil]
+description = 'ice devil'
+glyph       = '&'
+level       = 11
+difficulty  = 14
+move        = 6
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'white'
+
+[ice_troll]
+description = 'ice troll'
+glyph       = 'T'
+level       = 9
+difficulty  = 12
+move        = 10
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'white'
+
+[ice_vortex]
+description = 'ice vortex'
+glyph       = 'v'
+level       = 5
+difficulty  = 7
+move        = 20
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'cyan'
+
+[iguana]
+description = 'iguana'
+glyph       = ':'
+level       = 2
+difficulty  = 3
+move        = 6
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[imp]
+description = 'imp'
+glyph       = 'i'
+level       = 3
+difficulty  = 4
+move        = 12
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'red'
+
+[incubus]
+description = 'incubus'
+glyph       = '&'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 0
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'gray'
+
+[iron_golem]
+description = 'iron golem'
+glyph       = '''
+level       = 18
+difficulty  = 22
+move        = 6
+ac          = 3
+atk_dcount  = 4
+atk_dtype   = 10
+color       = 'hi_metal'
+
+[iron_piercer]
+description = 'iron piercer'
+glyph       = 'p'
+level       = 5
+difficulty  = 6
+move        = 1
+ac          = 0
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'cyan'
+
+[jabberwock]
+description = 'jabberwock'
+glyph       = 'J'
+level       = 15
+difficulty  = 18
+move        = 12
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 10
+color       = 'orange'
+
+[jackal]
+description = 'jackal'
+glyph       = 'd'
+level       = 0
+difficulty  = 1
+move        = 12
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'brown'
+
+[jaguar]
+description = 'jaguar'
+glyph       = 'f'
+level       = 4
+difficulty  = 6
+move        = 15
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[jellyfish]
+description = 'jellyfish'
+glyph       = ';'
+level       = 3
+difficulty  = 5
+move        = 3
+ac          = 6
+atk_dcount  = 3
+atk_dtype   = 3
+color       = 'blue'
+
+[juiblex]
+description = 'Juiblex'
+glyph       = '&'
+level       = 50
+difficulty  = 26
+move        = 3
+ac          = 7
+atk_dcount  = 4
+atk_dtype   = 10
+color       = 'bright_green'
+
+[keystone_kop]
+description = 'Keystone Kop'
+glyph       = 'K'
+level       = 1
+difficulty  = 3
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'blue'
+
+[ki_rin]
+description = 'ki-rin'
+glyph       = 'A'
+level       = 16
+difficulty  = 21
+move        = 18
+ac          = 5
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_gold'
+
+[killer_bee]
+description = 'killer bee'
+glyph       = 'a'
+level       = 1
+difficulty  = 5
+move        = 18
+ac          = 1
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'yellow'
+
+[kitten]
+description = 'kitten'
+glyph       = 'f'
+level       = 2
+difficulty  = 3
+move        = 18
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[kobold]
+description = 'kobold'
+glyph       = 'k'
+level       = 0
+difficulty  = 1
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[kobold_lord]
+description = 'kobold lord'
+glyph       = 'k'
+level       = 2
+difficulty  = 3
+move        = 6
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_lord'
+
+[kobold_mummy]
+description = 'kobold mummy'
+glyph       = 'M'
+level       = 3
+difficulty  = 4
+move        = 8
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[kobold_shaman]
+description = 'kobold shaman'
+glyph       = 'k'
+level       = 2
+difficulty  = 4
+move        = 6
+ac          = 6
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'hi_zap'
+
+[kobold_zombie]
+description = 'kobold zombie'
+glyph       = 'Z'
+level       = 0
+difficulty  = 1
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[kop_kaptain]
+description = 'Kop Kaptain'
+glyph       = 'K'
+level       = 4
+difficulty  = 6
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[kop_lieutenant]
+description = 'Kop Lieutenant'
+glyph       = 'K'
+level       = 3
+difficulty  = 5
+move        = 10
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'cyan'
+
+[kop_sergeant]
+description = 'Kop Sergeant'
+glyph       = 'K'
+level       = 2
+difficulty  = 4
+move        = 8
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'blue'
+
+[kraken]
+description = 'kraken'
+glyph       = ';'
+level       = 20
+difficulty  = 22
+move        = 3
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[large_cat]
+description = 'large cat'
+glyph       = 'f'
+level       = 6
+difficulty  = 7
+move        = 15
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_domestic'
+
+[large_dog]
+description = 'large dog'
+glyph       = 'd'
+level       = 6
+difficulty  = 7
+move        = 15
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_domestic'
+
+[large_kobold]
+description = 'large kobold'
+glyph       = 'k'
+level       = 1
+difficulty  = 2
+move        = 6
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[large_mimic]
+description = 'large mimic'
+glyph       = 'm'
+level       = 8
+difficulty  = 9
+move        = 3
+ac          = 7
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'red'
+
+[leather_golem]
+description = 'leather golem'
+glyph       = '''
+level       = 6
+difficulty  = 7
+move        = 6
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_leather'
+
+[lemure]
+description = 'lemure'
+glyph       = 'i'
+level       = 3
+difficulty  = 5
+move        = 3
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'brown'
+
+[leocrotta]
+description = 'leocrotta'
+glyph       = 'q'
+level       = 6
+difficulty  = 8
+move        = 18
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[leprechaun]
+description = 'leprechaun'
+glyph       = 'l'
+level       = 5
+difficulty  = 4
+move        = 15
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'green'
+
+[lich]
+description = 'lich'
+glyph       = 'L'
+level       = 11
+difficulty  = 14
+move        = 6
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'brown'
+
+[lichen]
+description = 'lichen'
+glyph       = 'F'
+level       = 0
+difficulty  = 1
+move        = 1
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'bright_green'
+
+[lieutenant]
+description = 'lieutenant'
+glyph       = '@'
+level       = 10
+difficulty  = 12
+move        = 10
+ac          = 10
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'green'
+
+[little_dog]
+description = 'little dog'
+glyph       = 'd'
+level       = 2
+difficulty  = 3
+move        = 18
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[lizard]
+description = 'lizard'
+glyph       = ':'
+level       = 5
+difficulty  = 6
+move        = 6
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'green'
+
+[long_worm]
+description = 'long worm'
+glyph       = 'w'
+level       = 9
+difficulty  = 10
+move        = 3
+ac          = 5
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'brown'
+
+[lurker_above]
+description = 'lurker above'
+glyph       = 't'
+level       = 10
+difficulty  = 12
+move        = 3
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'gray'
+
+[lynx]
+description = 'lynx'
+glyph       = 'f'
+level       = 5
+difficulty  = 7
+move        = 15
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'cyan'
+
+[mail_daemon]
+description = 'mail daemon'
+glyph       = '&'
+level       = 56
+difficulty  = 26
+move        = 24
+ac          = 10
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'bright_blue'
+
+[manes]
+description = 'manes'
+glyph       = 'i'
+level       = 1
+difficulty  = 3
+move        = 3
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'red'
+
+[marilith]
+description = 'marilith'
+glyph       = '&'
+level       = 7
+difficulty  = 11
+move        = 12
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[master_lich]
+description = 'master lich'
+glyph       = 'L'
+level       = 17
+difficulty  = 21
+move        = 9
+ac          = 4
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[master_mind_flayer]
+description = 'master mind flayer'
+glyph       = 'h'
+level       = 13
+difficulty  = 19
+move        = 12
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'magenta'
+
+[mastodon]
+description = 'mastodon'
+glyph       = 'q'
+level       = 20
+difficulty  = 22
+move        = 12
+ac          = 5
+atk_dcount  = 4
+atk_dtype   = 8
+color       = 'black'
+
+[medusa]
+description = 'Medusa'
+glyph       = '@'
+level       = 20
+difficulty  = 25
+move        = 12
+ac          = 2
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'bright_green'
+
+[mind_flayer]
+description = 'mind flayer'
+glyph       = 'h'
+level       = 9
+difficulty  = 13
+move        = 12
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'magenta'
+
+[minotaur]
+description = 'minotaur'
+glyph       = 'H'
+level       = 15
+difficulty  = 17
+move        = 15
+ac          = 6
+atk_dcount  = 3
+atk_dtype   = 10
+color       = 'brown'
+
+[monkey]
+description = 'monkey'
+glyph       = 'Y'
+level       = 2
+difficulty  = 4
+move        = 12
+ac          = 6
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'gray'
+
+[mordor_orc]
+description = 'Mordor orc'
+glyph       = 'o'
+level       = 3
+difficulty  = 5
+move        = 5
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'blue'
+
+[mountain_centaur]
+description = 'mountain centaur'
+glyph       = 'C'
+level       = 6
+difficulty  = 9
+move        = 20
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'cyan'
+
+[mountain_nymph]
+description = 'mountain nymph'
+glyph       = 'n'
+level       = 3
+difficulty  = 5
+move        = 12
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'brown'
+
+[mumak]
+description = 'mumak'
+glyph       = 'q'
+level       = 5
+difficulty  = 7
+move        = 9
+ac          = 0
+atk_dcount  = 4
+atk_dtype   = 12
+color       = 'gray'
+
+[nalfeshnee]
+description = 'nalfeshnee'
+glyph       = '&'
+level       = 11
+difficulty  = 15
+move        = 9
+ac          = 1
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'red'
+
+[nazgul]
+description = 'Nazgul'
+glyph       = 'W'
+level       = 13
+difficulty  = 17
+move        = 12
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'hi_lord'
+
+[newt]
+description = 'newt'
+glyph       = ':'
+level       = 0
+difficulty  = 1
+move        = 6
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'yellow'
+
+[nurse]
+description = 'nurse'
+glyph       = '@'
+level       = 11
+difficulty  = 13
+move        = 6
+ac          = 0
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[ochre_jelly]
+description = 'ochre jelly'
+glyph       = 'j'
+level       = 6
+difficulty  = 8
+move        = 3
+ac          = 8
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'brown'
+
+[ogre]
+description = 'ogre'
+glyph       = 'O'
+level       = 5
+difficulty  = 7
+move        = 10
+ac          = 5
+atk_dcount  = 2
+atk_dtype   = 5
+color       = 'brown'
+
+[ogre_king]
+description = 'ogre king'
+glyph       = 'O'
+level       = 9
+difficulty  = 11
+move        = 14
+ac          = 4
+atk_dcount  = 3
+atk_dtype   = 5
+color       = 'hi_lord'
+
+[ogre_lord]
+description = 'ogre lord'
+glyph       = 'O'
+level       = 7
+difficulty  = 9
+move        = 12
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[olog_hai]
+description = 'Olog-hai'
+glyph       = 'T'
+level       = 13
+difficulty  = 16
+move        = 12
+ac          = 4
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[oracle]
+description = 'Oracle'
+glyph       = '@'
+level       = 12
+difficulty  = 13
+move        = 0
+ac          = 0
+atk_dcount  = 0
+atk_dtype   = 4
+color       = 'hi_zap'
+
+[orange_dragon]
+description = 'orange dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 25
+color       = 'orange'
+
+[orc]
+description = 'orc'
+glyph       = 'o'
+level       = 1
+difficulty  = 3
+move        = 9
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'red'
+
+[orc_captain]
+description = 'orc-captain'
+glyph       = 'o'
+level       = 5
+difficulty  = 7
+move        = 5
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'hi_lord'
+
+[orc_mummy]
+description = 'orc mummy'
+glyph       = 'M'
+level       = 5
+difficulty  = 6
+move        = 10
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'gray'
+
+[orc_shaman]
+description = 'orc shaman'
+glyph       = 'o'
+level       = 3
+difficulty  = 5
+move        = 9
+ac          = 5
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'hi_zap'
+
+[orc_zombie]
+description = 'orc zombie'
+glyph       = 'Z'
+level       = 2
+difficulty  = 3
+move        = 6
+ac          = 9
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'gray'
+
+[orcus]
+description = 'Orcus'
+glyph       = '&'
+level       = 66
+difficulty  = 36
+move        = 9
+ac          = 6
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[owlbear]
+description = 'owlbear'
+glyph       = 'Y'
+level       = 5
+difficulty  = 7
+move        = 12
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[panther]
+description = 'panther'
+glyph       = 'f'
+level       = 5
+difficulty  = 7
+move        = 15
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'black'
+
+[paper_golem]
+description = 'paper golem'
+glyph       = '''
+level       = 3
+difficulty  = 4
+move        = 12
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'hi_paper'
+
+[pestilence]
+description = 'Pestilence'
+glyph       = '&'
+level       = 30
+difficulty  = 34
+move        = 12
+ac          = 5
+atk_dcount  = 8
+atk_dtype   = 8
+color       = 'hi_lord'
+
+[piranha]
+description = 'piranha'
+glyph       = ';'
+level       = 5
+difficulty  = 6
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[pit_fiend]
+description = 'pit fiend'
+glyph       = '&'
+level       = 13
+difficulty  = 16
+move        = 6
+ac          = 3
+atk_dcount  = 4
+atk_dtype   = 2
+color       = 'red'
+
+[pit_viper]
+description = 'pit viper'
+glyph       = 'S'
+level       = 6
+difficulty  = 9
+move        = 15
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'blue'
+
+[plains_centaur]
+description = 'plains centaur'
+glyph       = 'C'
+level       = 4
+difficulty  = 6
+move        = 18
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[pony]
+description = 'pony'
+glyph       = 'u'
+level       = 3
+difficulty  = 4
+move        = 16
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[prisoner]
+description = 'prisoner'
+glyph       = '@'
+level       = 12
+difficulty  = 14
+move        = 12
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'hi_domestic'
+
+[purple_worm]
+description = 'purple worm'
+glyph       = 'w'
+level       = 15
+difficulty  = 17
+move        = 9
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'magenta'
+
+[pyrolisk]
+description = 'pyrolisk'
+glyph       = 'c'
+level       = 6
+difficulty  = 8
+move        = 6
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[python]
+description = 'python'
+glyph       = 'S'
+level       = 6
+difficulty  = 8
+move        = 3
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'magenta'
+
+[quantum_mechanic]
+description = 'quantum mechanic'
+glyph       = 'Q'
+level       = 7
+difficulty  = 9
+move        = 12
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'cyan'
+
+[quasit]
+description = 'quasit'
+glyph       = 'i'
+level       = 3
+difficulty  = 7
+move        = 15
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'blue'
+
+[queen_bee]
+description = 'queen bee'
+glyph       = 'a'
+level       = 9
+difficulty  = 12
+move        = 24
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'hi_lord'
+
+[quivering_blob]
+description = 'quivering blob'
+glyph       = 'b'
+level       = 5
+difficulty  = 6
+move        = 1
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'white'
+
+[rabid_rat]
+description = 'rabid rat'
+glyph       = 'r'
+level       = 2
+difficulty  = 4
+move        = 12
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'brown'
+
+[raven]
+description = 'raven'
+glyph       = 'B'
+level       = 4
+difficulty  = 6
+move        = 20
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'black'
+
+[red_dragon]
+description = 'red dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 6
+atk_dtype   = 6
+color       = 'red'
+
+[red_mold]
+description = 'red mold'
+glyph       = 'F'
+level       = 1
+difficulty  = 2
+move        = 0
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 4
+color       = 'red'
+
+[red_naga]
+description = 'red naga'
+glyph       = 'N'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[red_naga_hatchling]
+description = 'red naga hatchling'
+glyph       = 'N'
+level       = 3
+difficulty  = 4
+move        = 10
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'red'
+
+[rock_mole]
+description = 'rock mole'
+glyph       = 'r'
+level       = 3
+difficulty  = 4
+move        = 3
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'gray'
+
+[rock_piercer]
+description = 'rock piercer'
+glyph       = 'p'
+level       = 3
+difficulty  = 4
+move        = 1
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'gray'
+
+[rock_troll]
+description = 'rock troll'
+glyph       = 'T'
+level       = 9
+difficulty  = 12
+move        = 12
+ac          = 0
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'cyan'
+
+[rope_golem]
+description = 'rope golem'
+glyph       = '''
+level       = 4
+difficulty  = 6
+move        = 9
+ac          = 8
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'brown'
+
+[rothe]
+description = 'rothe'
+glyph       = 'q'
+level       = 2
+difficulty  = 4
+move        = 9
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'brown'
+
+[rust_monster]
+description = 'rust monster'
+glyph       = 'R'
+level       = 5
+difficulty  = 8
+move        = 18
+ac          = 2
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'brown'
+
+[salamander]
+description = 'salamander'
+glyph       = ':'
+level       = 8
+difficulty  = 12
+move        = 12
+ac          = 1
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'orange'
+
+[sandestin]
+description = 'sandestin'
+glyph       = '&'
+level       = 13
+difficulty  = 15
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'gray'
+
+[sasquatch]
+description = 'sasquatch'
+glyph       = 'Y'
+level       = 7
+difficulty  = 9
+move        = 15
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'gray'
+
+[scorpion]
+description = 'scorpion'
+glyph       = 's'
+level       = 5
+difficulty  = 8
+move        = 15
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'red'
+
+[sergeant]
+description = 'sergeant'
+glyph       = '@'
+level       = 8
+difficulty  = 10
+move        = 10
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'red'
+
+[sewer_rat]
+description = 'sewer rat'
+glyph       = 'r'
+level       = 0
+difficulty  = 1
+move        = 12
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'brown'
+
+[shade]
+description = 'shade'
+glyph       = ' '
+level       = 12
+difficulty  = 14
+move        = 10
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'black'
+
+[shark]
+description = 'shark'
+glyph       = ';'
+level       = 7
+difficulty  = 9
+move        = 12
+ac          = 2
+atk_dcount  = 5
+atk_dtype   = 6
+color       = 'gray'
+
+[shocking_sphere]
+description = 'shocking sphere'
+glyph       = 'e'
+level       = 6
+difficulty  = 8
+move        = 13
+ac          = 4
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'hi_zap'
+
+[shopkeeper]
+description = 'shopkeeper'
+glyph       = '@'
+level       = 12
+difficulty  = 15
+move        = 18
+ac          = 0
+atk_dcount  = 4
+atk_dtype   = 4
+color       = 'hi_domestic'
+
+[shrieker]
+description = 'shrieker'
+glyph       = 'F'
+level       = 3
+difficulty  = 2
+move        = 1
+ac          = 7
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'magenta'
+
+[silver_dragon]
+description = 'silver dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'dragon_silver'
+
+[skeleton]
+description = 'skeleton'
+glyph       = 'Z'
+level       = 12
+difficulty  = 14
+move        = 8
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'white'
+
+[small_mimic]
+description = 'small mimic'
+glyph       = 'm'
+level       = 7
+difficulty  = 8
+move        = 3
+ac          = 7
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'brown'
+
+[snake]
+description = 'snake'
+glyph       = 'S'
+level       = 4
+difficulty  = 6
+move        = 15
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[soldier]
+description = 'soldier'
+glyph       = '@'
+level       = 6
+difficulty  = 8
+move        = 10
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'gray'
+
+[soldier_ant]
+description = 'soldier ant'
+glyph       = 'a'
+level       = 3
+difficulty  = 6
+move        = 18
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'blue'
+
+[spotted_jelly]
+description = 'spotted jelly'
+glyph       = 'j'
+level       = 5
+difficulty  = 6
+move        = 0
+ac          = 8
+atk_dcount  = 0
+atk_dtype   = 6
+color       = 'green'
+
+[stalker]
+description = 'stalker'
+glyph       = 'E'
+level       = 8
+difficulty  = 9
+move        = 12
+ac          = 3
+atk_dcount  = 4
+atk_dtype   = 4
+color       = 'white'
+
+[steam_vortex]
+description = 'steam vortex'
+glyph       = 'v'
+level       = 7
+difficulty  = 9
+move        = 22
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'blue'
+
+[stone_giant]
+description = 'stone giant'
+glyph       = 'H'
+level       = 6
+difficulty  = 8
+move        = 6
+ac          = 0
+atk_dcount  = 2
+atk_dtype   = 10
+color       = 'gray'
+
+[stone_golem]
+description = 'stone golem'
+glyph       = '''
+level       = 14
+difficulty  = 15
+move        = 6
+ac          = 5
+atk_dcount  = 3
+atk_dtype   = 8
+color       = 'gray'
+
+[storm_giant]
+description = 'storm giant'
+glyph       = 'H'
+level       = 16
+difficulty  = 19
+move        = 12
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 12
+color       = 'blue'
+
+[straw_golem]
+description = 'straw golem'
+glyph       = '''
+level       = 3
+difficulty  = 4
+move        = 12
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 2
+color       = 'yellow'
+
+[succubus]
+description = 'succubus'
+glyph       = '&'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 0
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'gray'
+
+[tengu]
+description = 'tengu'
+glyph       = 'i'
+level       = 6
+difficulty  = 7
+move        = 13
+ac          = 5
+atk_dcount  = 1
+atk_dtype   = 7
+color       = 'cyan'
+
+[tiger]
+description = 'tiger'
+glyph       = 'f'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'yellow'
+
+[titan]
+description = 'titan'
+glyph       = 'H'
+level       = 16
+difficulty  = 20
+move        = 18
+ac          = 3
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'magenta'
+
+[titanothere]
+description = 'titanothere'
+glyph       = 'q'
+level       = 12
+difficulty  = 13
+move        = 12
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'gray'
+
+[trapper]
+description = 'trapper'
+glyph       = 't'
+level       = 12
+difficulty  = 14
+move        = 3
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'green'
+
+[troll]
+description = 'troll'
+glyph       = 'T'
+level       = 7
+difficulty  = 9
+move        = 12
+ac          = 4
+atk_dcount  = 4
+atk_dtype   = 2
+color       = 'brown'
+
+[umber_hulk]
+description = 'umber hulk'
+glyph       = 'U'
+level       = 9
+difficulty  = 12
+move        = 6
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'brown'
+
+[uruk_hai]
+description = 'Uruk-hai'
+glyph       = 'o'
+level       = 3
+difficulty  = 5
+move        = 7
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'black'
+
+[vampire]
+description = 'vampire'
+glyph       = 'V'
+level       = 10
+difficulty  = 12
+move        = 12
+ac          = 1
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[vampire_bat]
+description = 'vampire bat'
+glyph       = 'B'
+level       = 5
+difficulty  = 7
+move        = 20
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'black'
+
+[vampire_lord]
+description = 'vampire lord'
+glyph       = 'V'
+level       = 12
+difficulty  = 14
+move        = 14
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'blue'
+
+[violet_fungus]
+description = 'violet fungus'
+glyph       = 'F'
+level       = 3
+difficulty  = 5
+move        = 1
+ac          = 7
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'magenta'
+
+[vlad_the_impaler]
+description = 'Vlad the Impaler'
+glyph       = 'V'
+level       = 28
+difficulty  = 32
+move        = 26
+ac          = 6
+atk_dcount  = 2
+atk_dtype   = 10
+color       = 'hi_lord'
+
+[vrock]
+description = 'vrock'
+glyph       = '&'
+level       = 8
+difficulty  = 11
+move        = 12
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'red'
+
+[warg]
+description = 'warg'
+glyph       = 'd'
+level       = 7
+difficulty  = 8
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'brown'
+
+[warhorse]
+description = 'warhorse'
+glyph       = 'u'
+level       = 7
+difficulty  = 9
+move        = 24
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 10
+color       = 'brown'
+
+[watch_captain]
+description = 'watch captain'
+glyph       = '@'
+level       = 10
+difficulty  = 12
+move        = 10
+ac          = 10
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'green'
+
+[watchman]
+description = 'watchman'
+glyph       = '@'
+level       = 6
+difficulty  = 8
+move        = 10
+ac          = 10
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'gray'
+
+[water_demon]
+description = 'water demon'
+glyph       = '&'
+level       = 8
+difficulty  = 11
+move        = 12
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'blue'
+
+[water_elemental]
+description = 'water elemental'
+glyph       = 'E'
+level       = 8
+difficulty  = 10
+move        = 6
+ac          = 2
+atk_dcount  = 5
+atk_dtype   = 6
+color       = 'blue'
+
+[water_moccasin]
+description = 'water moccasin'
+glyph       = 'S'
+level       = 4
+difficulty  = 7
+move        = 15
+ac          = 3
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'red'
+
+[water_nymph]
+description = 'water nymph'
+glyph       = 'n'
+level       = 3
+difficulty  = 5
+move        = 12
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'blue'
+
+[water_troll]
+description = 'water troll'
+glyph       = 'T'
+level       = 11
+difficulty  = 13
+move        = 14
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 8
+color       = 'blue'
+
+[werejackal]
+description = 'werejackal'
+glyph       = '@'
+level       = 2
+difficulty  = 3
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'red'
+
+[wererat]
+description = 'wererat'
+glyph       = '@'
+level       = 2
+difficulty  = 3
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'brown'
+
+[werewolf]
+description = 'werewolf'
+glyph       = '@'
+level       = 5
+difficulty  = 6
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'orange'
+
+[white_dragon]
+description = 'white dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'white'
+
+[white_unicorn]
+description = 'white unicorn'
+glyph       = 'u'
+level       = 4
+difficulty  = 6
+move        = 24
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 12
+color       = 'white'
+
+[winged_gargoyle]
+description = 'winged gargoyle'
+glyph       = 'g'
+level       = 9
+difficulty  = 11
+move        = 15
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[winter_wolf]
+description = 'winter wolf'
+glyph       = 'd'
+level       = 7
+difficulty  = 9
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 6
+color       = 'cyan'
+
+[winter_wolf_cub]
+description = 'winter wolf cub'
+glyph       = 'd'
+level       = 5
+difficulty  = 7
+move        = 12
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 8
+color       = 'cyan'
+
+[wizard_of_yendor]
+description = 'Wizard of Yendor'
+glyph       = '@'
+level       = 30
+difficulty  = 34
+move        = 12
+ac          = 8
+atk_dcount  = 2
+atk_dtype   = 12
+color       = 'hi_lord'
+
+[wolf]
+description = 'wolf'
+glyph       = 'd'
+level       = 5
+difficulty  = 6
+move        = 12
+ac          = 4
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'brown'
+
+[wood_golem]
+description = 'wood golem'
+glyph       = '''
+level       = 7
+difficulty  = 8
+move        = 3
+ac          = 4
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'hi_wood'
+
+[wood_nymph]
+description = 'wood nymph'
+glyph       = 'n'
+level       = 3
+difficulty  = 5
+move        = 12
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 0
+color       = 'green'
+
+[woodchuck]
+description = 'woodchuck'
+glyph       = 'r'
+level       = 3
+difficulty  = 4
+move        = 3
+ac          = 0
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'brown'
+
+[woodland_elf]
+description = 'Woodland-elf'
+glyph       = '@'
+level       = 4
+difficulty  = 6
+move        = 12
+ac          = 10
+atk_dcount  = 2
+atk_dtype   = 4
+color       = 'green'
+
+[wraith]
+description = 'wraith'
+glyph       = 'W'
+level       = 6
+difficulty  = 8
+move        = 12
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'black'
+
+[wumpus]
+description = 'wumpus'
+glyph       = 'q'
+level       = 8
+difficulty  = 9
+move        = 3
+ac          = 2
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'cyan'
+
+[xan]
+description = 'xan'
+glyph       = 'x'
+level       = 7
+difficulty  = 9
+move        = 18
+ac          = 4
+atk_dcount  = 1
+atk_dtype   = 4
+color       = 'red'
+
+[xorn]
+description = 'xorn'
 glyph       = 'X'
-desc        = 'grid bug'
-movement    = ['up', '.', 'down', '.']
-hit_pct     = 0.35
+level       = 8
+difficulty  = 11
+move        = 9
+ac          = 2
+atk_dcount  = 1
+atk_dtype   = 3
+color       = 'brown'
+
+[yeenoghu]
+description = 'Yeenoghu'
+glyph       = '&'
+level       = 56
+difficulty  = 31
+move        = 18
+ac          = 5
+atk_dcount  = 3
+atk_dtype   = 6
+color       = 'hi_lord'
+
+[yellow_dragon]
+description = 'yellow dragon'
+glyph       = 'D'
+level       = 15
+difficulty  = 20
+move        = 9
+ac          = 1
+atk_dcount  = 4
+atk_dtype   = 6
+color       = 'yellow'
+
+[yellow_light]
+description = 'yellow light'
+glyph       = 'y'
+level       = 3
+difficulty  = 5
+move        = 15
+ac          = 0
+atk_dcount  = 10
+atk_dtype   = 20
+color       = 'yellow'
+
+[yellow_mold]
+description = 'yellow mold'
+glyph       = 'F'
+level       = 1
+difficulty  = 2
+move        = 0
+ac          = 9
+atk_dcount  = 0
+atk_dtype   = 4
+color       = 'yellow'
+
+[yeti]
+description = 'yeti'
+glyph       = 'Y'
+level       = 5
+difficulty  = 7
+move        = 15
+ac          = 6
+atk_dcount  = 1
+atk_dtype   = 6
+color       = 'white'
+
+[zruty]
+description = 'zruty'
+glyph       = 'z'
+level       = 9
+difficulty  = 11
+move        = 8
+ac          = 3
+atk_dcount  = 3
+atk_dtype   = 4
+color       = 'brown'
+

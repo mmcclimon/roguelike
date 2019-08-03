@@ -46,9 +46,11 @@ class Monster(Drawable):
         kwargs['glyph'] = kwargs.get('glyph', 'X')
         super().__init__(**kwargs)
 
-        self.hp = kwargs['hp']
-        self.damage = kwargs['damage']
-        self.hit_pct = kwargs['hit_pct']
+        # TODO: implement nethack logic for monsters
+        self.hit_pct = 0.25
+        self.damage  = 1
+        self.hp = kwargs.get('level', 1)
+
         self.is_alive = True
         self.mvmt = itertools.cycle(kwargs.get('movement', ['.']))
 

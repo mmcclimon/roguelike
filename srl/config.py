@@ -10,5 +10,5 @@ class MonsterCollection:
             self.templates[key] = kwargs
 
     def random_monster(self):
-        tmpl = self.templates.get('gridbug')
+        tmpl = self.templates.get('grid_bug')
         return Monster(**tmpl)
