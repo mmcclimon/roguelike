@@ -1,8 +1,21 @@
 import curses
 import random
 
+# I suspect that there is a better way to do this, but this kinda sorta works
+# as long as _something_ calls set_up() after curses is loaded
+class Palette():
+    @classmethod
+    def set_up(cls):
+        curses.init_pair(1, curses.COLOR_RED, 0)
+        curses.init_pair(2, curses.COLOR_YELLOW, 0)
+
+        Palette.red = curses.color_pair(1)
+        Palette.yellow = curses.color_pair(2)
+
 class ScreenCollection:
     def __init__(self, stdscr):
+        Palette.set_up()    # as early as is feasible
+
         self.stdscr = stdscr
         self.stdscr.clear()
 
@@ -110,7 +123,7 @@ class InfoWindow(BaseWindow):
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
-        self.window.addstr(0, 0, self.text)
+        self.window.addstr(0, 0, self.text, Palette.yellow)
 
         if refresh:
             self.window.refresh()
@@ -130,7 +143,7 @@ class DebugWindow(BaseWindow):
     def draw(self, ctx, refresh=True):
         self.window.erase()
         debug_str = '[debug] {}'.format(self.text)
-        self.window.addstr(0, 0, debug_str)
+        self.window.addstr(0, 0, debug_str, Palette.red )
 
         if refresh:
             self.window.refresh()
