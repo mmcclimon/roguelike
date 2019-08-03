@@ -37,6 +37,7 @@ class Boulder(Drawable):
                 y=y,
                 glyph='`',
                 description='boulder',
+                color='gray',
                 is_passable=False
                 )
 

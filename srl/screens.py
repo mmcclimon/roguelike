@@ -139,5 +139,3 @@ class DebugWindow(BaseWindow):
     def write_text(self, ctx, text):
         self.text = text
         self.draw(ctx, refresh=True)
-
-

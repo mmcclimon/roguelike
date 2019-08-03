@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import enum
+import itertools
 
 class Direction(enum.Enum):
     left  = enum.auto()
@@ -30,6 +31,8 @@ class Drawable(ContextDrawable):
 
         self.description = kwargs.get('description', '')
         self.is_passable = kwargs.get('is_passable', True)
+        c = kwargs.get('color', 'normal')
+        self.color = Palette.get_color(c)
 
         self._last_x = self.x
         self._last_y = self.y
@@ -74,7 +77,7 @@ class Drawable(ContextDrawable):
 
     def draw(self, ctx):
         self._last_y, self._last_x = self.coords()
-        ctx.map.addstr(*self.coords(), self.glyph)
+        ctx.map.addstr(*self.coords(), self.glyph, self.color)
 
     def handle_collisions(self, ctx):
         if self.coords() == ctx.player.coords():
@@ -109,27 +112,45 @@ class Drawable(ContextDrawable):
 # means that we can't just run it when the class evaluates. I also want to
 # call these things as class methods, which means that we need to define them
 # as properties on the metaclass. See https://stackoverflow.com/a/15226813.
+import curses
 class MetaPalette(type):
+    _has_loaded = False
+
+    def _init(cls):
+        cls._color_pairs = { 'normal': curses.color_pair(0) }
+
+        _counter = itertools.count(1)
+        def def_color(name, fg, bg=0):
+            pairnum = next(_counter)
+            curses.init_pair(pairnum, fg, bg)
+            cls._color_pairs[name] = curses.color_pair(pairnum)
+            setattr(cls, name, cls._color_pairs[name])
+
+        def_color('black',     curses.COLOR_BLACK)
+        def_color('blue',      curses.COLOR_BLUE)
+        def_color('cyan',      curses.COLOR_CYAN)
+        def_color('green',     curses.COLOR_GREEN)
+        def_color('magenta',   curses.COLOR_MAGENTA)
+        def_color('red',       curses.COLOR_RED)
+        def_color('white',     curses.COLOR_WHITE)
+        def_color('yellow',    curses.COLOR_YELLOW)
+        def_color('brown',     136)
+        def_color('gray',      247)
+
+        cls._has_loaded = True
+
     def _color_pair(cls, color):
-        if getattr(cls, '_color_pairs', None) is None:
-            import curses
-            cls._color_pairs = {}
-
-            curses.init_pair(1, curses.COLOR_RED, 0)
-            cls._color_pairs['red'] = curses.color_pair(1)
-
-            curses.init_pair(2, curses.COLOR_YELLOW, 0)
-            cls._color_pairs['yellow'] = curses.color_pair(2)
-
+        if not cls._has_loaded: cls._init()
         return cls._color_pairs[color]
 
-    @property
-    def red(cls): return cls._color_pair('red')
+    def get_color(cls, color):
+        try:
+            return cls._color_pair(color)
+        except KeyError:
+            # XXX log
+            return cls._color_pair('normal')
 
-    @property
-    def yellow(cls): return cls._color_pair('yellow')
-
-# with this metaclass, Palette.red just calls MetaPalette.red(), which will
-# lazy-load the colors into curses and do what we want!
+# with this metaclass, Palette will just lazy-load the colors into curses and
+# do what we want!
 class Palette(metaclass=MetaPalette):
     pass
