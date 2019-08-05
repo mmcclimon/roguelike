@@ -54,7 +54,7 @@ class Monster(Drawable):
         self.hp = kwargs.get('level', 1)
 
         self.is_alive = True
-        self.mvmt = itertools.cycle(kwargs.get('movement', ['.']))
+        self.mvmt = itertools.cycle(kwargs.get('movement', ['_']))
 
     def on_collision(self, ctx):
         if self.is_alive:
@@ -63,8 +63,7 @@ class Monster(Drawable):
     # we move!
     def on_tick(self, ctx):
         direction = next(self.mvmt)
-        if direction != '.':
-            self.try_move(ctx, direction)
+        self.try_move(ctx, direction)
 
     def fight(self, ctx):
         if random.random() < self.hit_pct:

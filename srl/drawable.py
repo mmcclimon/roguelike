@@ -5,6 +5,8 @@ import logging
 from abc import ABC, abstractmethod
 
 class Direction(enum.Enum):
+    _     = 0
+    nil   = 0
     left  = enum.auto()
     right = enum.auto()
     up    = enum.auto()
@@ -94,6 +96,9 @@ class Drawable(ContextDrawable):
 
         if type(direction) == str:
             direction = Direction[direction]
+
+        if direction == Direction.nil:
+            return self.y, self.x
 
         if direction == Direction.left:
             return self.y, self.x - 1
