@@ -51,6 +51,7 @@ class Monster(Drawable):
         # TODO: implement nethack logic for monsters
         self.hit_pct = 0.25
         self.damage  = 1
+        self.attack = ( kwargs.get('atk_dcount'), kwargs.get('atk_dtype') )
         self.hp = kwargs.get('level', 1)
 
         self.is_alive = True
@@ -68,9 +69,14 @@ class Monster(Drawable):
     def fight(self, ctx):
         if random.random() < self.hit_pct:
             ctx.info('You were hit by a {}!'.format(self.description))
-            ctx.player.take_damage(ctx, self.damage)
+            dmg = self.roll_damage()
+            ctx.player.take_damage(ctx, dmg)
         else:
             self.take_damage(ctx)
+
+    def roll_damage(self):
+        num_dice, die_type = self.attack
+        return sum([random.randint(1, die_type) for _ in range(num_dice)])
 
     # TODO damage depends on player attributes (somehow)
     def take_damage(self, ctx):
