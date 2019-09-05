@@ -3,9 +3,10 @@ import logging
 
 from srl.player import Player
 from srl.keymap import Keymap
-from srl.level  import Level
+from srl.level import Level
 from srl.screens import ScreenCollection
 from srl.config import MonsterCollection
+
 
 class Context:
     def __init__(self, stdscr):
@@ -20,19 +21,19 @@ class Context:
         self.player = Player()
         self.keymap = Keymap()
 
-        self.monster_collection = MonsterCollection('monsters.toml')
+        self.monster_collection = MonsterCollection("monsters.toml")
 
         self.levels = []
         self.level_idx = -1
 
         # We begin...
-        self.info('Slowly I turned... step by step...', expire_after=3)
+        self.info("Slowly I turned... step by step...", expire_after=3)
         self.descend()
 
     def loop_once(self):
-        '''The main run loop.
+        """The main run loop.
         Draw all of our screens, wait for input, then do something about it.
-        '''
+        """
         self.ticks += 1
 
         # draw
@@ -59,7 +60,7 @@ class Context:
 
     def check_info_expiration(self):
         if self.info_expires_at == self.ticks:
-            self.screens.info.write_text(self, '')
+            self.screens.info.write_text(self, "")
             self.info_expires_at = None
 
     def generate_result(self):
@@ -67,7 +68,7 @@ class Context:
 
     @property
     def drawables(self):
-        return [ self.current_level, self.player ]
+        return [self.current_level, self.player]
 
     # Loop control plumbing
     # ---------------------
@@ -88,7 +89,7 @@ class Context:
 
     @property
     def current_level(self):
-        return self.levels[ self.level_idx ]
+        return self.levels[self.level_idx]
 
     def descend(self):
         if self.level_idx < len(self.levels):
@@ -99,7 +100,7 @@ class Context:
 
     def ascend(self):
         self.level_idx -= 1
-        self.debug('set level index to {}'.format(self.level_idx))
+        self.debug("set level index to {}".format(self.level_idx))
         if self.level_idx < 0:
             self.mark_done()
             return
@@ -115,10 +116,10 @@ class Result:
 
     def print(self):
         if self.ctx.level_idx < 0:
-            print('You won!')
+            print("You won!")
             return
 
         if self.ctx.player.is_alive:
-            print('You quit, like a coward')
+            print("You quit, like a coward")
         else:
-            print('You died. :(')
+            print("You died. :(")

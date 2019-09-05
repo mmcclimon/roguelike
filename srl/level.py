@@ -1,6 +1,7 @@
 from srl.drawable import ContextDrawable
 from srl.map_objects import StairsDown, StairsUp, Boulder
 
+
 class Level(ContextDrawable):
     def __init__(self, ctx, idx):
         self.number = idx
@@ -14,7 +15,7 @@ class Level(ContextDrawable):
     def generate(self, ctx):
         # make a level-down and a level-up
         self.way_down = self.place_randomly(ctx, StairsDown())
-        self.way_up   = self.place_randomly(ctx, StairsUp())
+        self.way_up = self.place_randomly(ctx, StairsUp())
 
         for i in range(3):
             self.place_randomly(ctx, Boulder())
@@ -49,7 +50,7 @@ class Level(ContextDrawable):
         return bool(self.thing_at(y, x))
 
     def thing_at(self, y, x):
-        lookup = { obj.coords(): obj for obj in self.drawables }
+        lookup = {obj.coords(): obj for obj in self.drawables}
         try:
             return lookup[(y, x)]
         except KeyError:

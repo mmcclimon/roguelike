@@ -1,8 +1,9 @@
 from srl.drawable import Drawable
 
+
 class Player(Drawable):
     def __init__(self, x=0, y=0, hp=10):
-        super().__init__(x=x, y=y, glyph='@', desc='you')
+        super().__init__(x=x, y=y, glyph="@", desc="you")
         self.hp = hp
         self.is_alive = True
 
@@ -17,7 +18,7 @@ class Player(Drawable):
         did_move, what = super().try_move(ctx, dir_str)
 
         if what:
-            ctx.info('Your progress is blocked by a {}.'.format(what))
+            ctx.info("Your progress is blocked by a {}.".format(what))
 
     def take_damage(self, ctx, damage):
         self.hp -= damage
@@ -28,4 +29,3 @@ class Player(Drawable):
     def die(self, ctx):
         self.is_alive = False
         ctx.mark_done()
-

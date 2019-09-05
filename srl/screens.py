@@ -2,6 +2,7 @@ import curses
 import random
 from srl.drawable import Palette
 
+
 class ScreenCollection:
     def __init__(self, stdscr):
         self.stdscr = stdscr
@@ -26,7 +27,7 @@ class ScreenCollection:
         self.info = InfoWindow(info_win)
 
         # draw our lil debugging window
-        debug_win = curses.newwin(1, curses.COLS, curses.LINES-1, 0)
+        debug_win = curses.newwin(1, curses.COLS, curses.LINES - 1, 0)
         self.debug = DebugWindow(debug_win)
 
     def draw(self, ctx, refresh=False):
@@ -41,6 +42,7 @@ class ScreenCollection:
         self.debug.noutrefresh()
         self.map.noutrefresh(*self.map.refresh_args)
         curses.doupdate()
+
 
 # This is a janky wrapper around curses.window, since it doesn't seem like I
 # can rebless the curses.window object into my class.
@@ -61,21 +63,18 @@ class StatusWindow(BaseWindow):
 
         max_y, max_x = self.window.getmaxyx()
         self.max_x = max_x
-        self.refresh_args = [0,0, 0,0, 1,self.max_x]
-
+        self.refresh_args = [0, 0, 0, 0, 1, self.max_x]
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
-        fmt = 'Lvl:{} HP:{}'
-        line = fmt.format(
-                ctx.level_idx,
-                ctx.player.hp
-                )
+        fmt = "Lvl:{} HP:{}"
+        line = fmt.format(ctx.level_idx, ctx.player.hp)
 
         self.window.addstr(0, 0, line)
 
         if refresh:
             self.window.refresh(*self.refresh_args)
+
 
 class MapWindow(BaseWindow):
     def __init__(self, window):
@@ -83,7 +82,7 @@ class MapWindow(BaseWindow):
         max_y, max_x = self.window.getmaxyx()
         self.max_y = max_y - 2
         self.max_x = max_x
-        self.refresh_args = [0,0, 1,0, self.max_y, self.max_x]
+        self.refresh_args = [0, 0, 1, 0, self.max_y, self.max_x]
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
@@ -99,15 +98,17 @@ class MapWindow(BaseWindow):
 
     # Can we actually draw a thing at y,x?
     def contains(self, y, x):
-        if y < 0 or y >= self.max_y: return False
-        if x < 0 or x >= self.max_x: return False
+        if y < 0 or y >= self.max_y:
+            return False
+        if x < 0 or x >= self.max_x:
+            return False
         return True
 
 
 class InfoWindow(BaseWindow):
     def __init__(self, window):
         super().__init__(window)
-        self.text = ''
+        self.text = ""
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
@@ -125,13 +126,13 @@ class DebugWindow(BaseWindow):
     def __init__(self, window):
         super().__init__(window)
 
-        self.text = ''
-        self.window.addstr(0, 0, '[debug]')
+        self.text = ""
+        self.window.addstr(0, 0, "[debug]")
 
     def draw(self, ctx, refresh=True):
         self.window.erase()
-        debug_str = '[debug] {}'.format(self.text)
-        self.window.addstr(0, 0, debug_str, Palette.red )
+        debug_str = "[debug] {}".format(self.text)
+        self.window.addstr(0, 0, debug_str, Palette.red)
 
         if refresh:
             self.window.refresh()

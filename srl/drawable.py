@@ -4,13 +4,15 @@ import logging
 
 from abc import ABC, abstractmethod
 
+
 class Direction(enum.Enum):
-    _     = 0
-    nil   = 0
-    left  = enum.auto()
+    _ = 0
+    nil = 0
+    left = enum.auto()
     right = enum.auto()
-    up    = enum.auto()
-    down  = enum.auto()
+    up = enum.auto()
+    down = enum.auto()
+
 
 class ContextDrawable(ABC):
     @abstractmethod
@@ -27,25 +29,28 @@ class ContextDrawable(ABC):
     def on_tick(self, ctx):
         pass
 
+
 class Drawable(ContextDrawable):
     def __init__(self, **kwargs):
-        self._x = kwargs.get('x', -1)
-        self._y = kwargs.get('y', -1)
-        self.glyph = kwargs['glyph']
+        self._x = kwargs.get("x", -1)
+        self._y = kwargs.get("y", -1)
+        self.glyph = kwargs["glyph"]
 
-        self.description = kwargs.get('description', '')
-        self.is_passable = kwargs.get('is_passable', True)
-        c = kwargs.get('color', 'normal')
+        self.description = kwargs.get("description", "")
+        self.is_passable = kwargs.get("is_passable", True)
+        c = kwargs.get("color", "normal")
         self.color = Palette.get_color(c)
 
         self._last_x = self.x
         self._last_y = self.y
 
     @property
-    def x(self): return self._x
+    def x(self):
+        return self._x
 
     @property
-    def y(self): return self._y
+    def y(self):
+        return self._y
 
     # return y, x to pass directly to curses
     def coords(self):
@@ -67,8 +72,8 @@ class Drawable(ContextDrawable):
 
     # This interface sucks
     def can_move_to(self, ctx, y, x):
-        if not ctx.map.contains(y,x):
-            return (False, 'wall')
+        if not ctx.map.contains(y, x):
+            return (False, "wall")
 
         thing = ctx.current_level.thing_at(y, x)
         if not thing:
@@ -85,7 +90,7 @@ class Drawable(ContextDrawable):
 
     def handle_collisions(self, ctx):
         if self.coords() == ctx.player.coords():
-            ctx.debug('zomg, a collision with {}'.format(self.glyph))
+            ctx.debug("zomg, a collision with {}".format(self.glyph))
             self.on_collision(ctx)
 
     # direction is maybe a string, or maybe an enum
@@ -120,42 +125,47 @@ class Drawable(ContextDrawable):
 # call these things as class methods, which means that we need to define them
 # as properties on the metaclass. See https://stackoverflow.com/a/15226813.
 import curses
+
+
 class MetaPalette(type):
     _has_loaded = False
 
     def _init(cls):
-        cls._color_pairs = { 'normal': curses.color_pair(0) }
+        cls._color_pairs = {"normal": curses.color_pair(0)}
 
         _counter = itertools.count(1)
+
         def def_color(name, fg, bg=0):
             pairnum = next(_counter)
             curses.init_pair(pairnum, fg, bg)
             cls._color_pairs[name] = curses.color_pair(pairnum)
             setattr(cls, name, cls._color_pairs[name])
 
-        def_color('black',     curses.COLOR_BLACK)
-        def_color('blue',      curses.COLOR_BLUE)
-        def_color('cyan',      curses.COLOR_CYAN)
-        def_color('green',     curses.COLOR_GREEN)
-        def_color('magenta',   curses.COLOR_MAGENTA)
-        def_color('red',       curses.COLOR_RED)
-        def_color('white',     curses.COLOR_WHITE)
-        def_color('yellow',    curses.COLOR_YELLOW)
-        def_color('brown',     136)
-        def_color('gray',      247)
+        def_color("black", curses.COLOR_BLACK)
+        def_color("blue", curses.COLOR_BLUE)
+        def_color("cyan", curses.COLOR_CYAN)
+        def_color("green", curses.COLOR_GREEN)
+        def_color("magenta", curses.COLOR_MAGENTA)
+        def_color("red", curses.COLOR_RED)
+        def_color("white", curses.COLOR_WHITE)
+        def_color("yellow", curses.COLOR_YELLOW)
+        def_color("brown", 136)
+        def_color("gray", 247)
 
         cls._has_loaded = True
 
     def _color_pair(cls, color):
-        if not cls._has_loaded: cls._init()
+        if not cls._has_loaded:
+            cls._init()
         return cls._color_pairs[color]
 
     def get_color(cls, color):
         try:
             return cls._color_pair(color)
         except KeyError:
-            logging.warning('missing color %s', color)
-            return cls._color_pair('normal')
+            logging.warning("missing color %s", color)
+            return cls._color_pair("normal")
+
 
 # with this metaclass, Palette will just lazy-load the colors into curses and
 # do what we want!
